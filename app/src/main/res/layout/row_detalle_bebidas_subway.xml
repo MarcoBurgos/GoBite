@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardDetallesBebidasSubway"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:background="@color/colorPrimaryDark"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="4dp">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgBebidasSw"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
+            />
+
+        <TextView
+            android:id="@+id/precioBebidasSw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/imgBebidasSw"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="2dp"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="@color/Rojo"
+            android:shadowColor="@color/text_shadow"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="Precio"/>
+
+
+        <TextView
+            android:id="@+id/nombreBebidasSw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_below="@+id/imgBebidasSw"
+            android:text="Titular"
+            android:textColor="@color/TextosCafés"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/descripciónBebidasSw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_below="@+id/nombreBebidasSw"
+            android:text="Descripciones"
+            android:textColor="@color/TextoCafeAlterno"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:id="@+id/divisorEntradas"
+            android:layout_height="1dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_below="@+id/descripciónBebidasSw"
+            android:background="@color/PrimariOscuro"
+            />
+
+        <View
+            android:layout_width="1dp"
+            android:id="@+id/divisorV"
+            android:layout_height="52dp"
+            android:layout_below="@+id/divisorEntradas"
+            android:layout_centerHorizontal="true"
+            android:background="@color/PrimariOscuro"
+            />
+
+
+        <TextView
+            android:id="@+id/botonOrdenarMenuEntrada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/divisorEntradas"
+            android:text="Configurar"
+            android:clickable="true"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textAppearance="?android:attr/textAppearanceLargePopupMenu"
+            android:textColor="@color/TextosNaranja"/>
+
+        <TextView
+            android:id="@+id/botonOrdenarRapidoEntrada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_alignParentRight="true"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:layout_below="@+id/divisorEntradas"
+            android:text="Añadir al carrito"
+            android:clickable="true"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textAppearance="?android:attr/textAppearanceLargePopupMenu"
+            android:textColor="@color/TextosNaranja"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_below="@+id/botonOrdenarMenuEntrada"
+            android:background="@android:color/white"
+            />
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

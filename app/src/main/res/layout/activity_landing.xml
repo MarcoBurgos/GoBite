@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/FondoGris"
+    tools:context="com.marcoburgos.gobite.Landing">
+
+
+    <ImageView
+        android:id="@+id/imageViewTarjetaLanding"
+        android:layout_width="318dp"
+        android:layout_height="264dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp"
+        android:background="@drawable/landing"
+        android:scaleType="fitXY" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Hola, Alicia. Qué vas a pedir hoy para comer?"
+        android:layout_centerInParent="true"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginBottom="46dp"
+        android:layout_above="@+id/buttonMisPedidos"
+        android:layout_centerHorizontal="true" />
+
+
+
+        <Button
+            android:id="@+id/buttonMisPedidos"
+            android:layout_width="145dp"
+            android:layout_height="145dp"
+            android:background="@drawable/botonpedidos"
+            android:layout_below="@id/imageViewTarjetaLanding"
+            android:layout_marginTop="16dp"
+            android:layout_alignStart="@id/imageViewTarjetaLanding"
+            android:text="Revisar mis
+            pedidos"
+            android:elevation="8dp"
+            android:textColor="#FFFF" />
+
+
+        <Button
+            android:id="@+id/buttonNuevaOrden"
+            android:layout_width="145dp"
+            android:layout_height="145dp"
+            android:background="@drawable/botonordenes"
+            android:text="Hacer una
+            nueva orden"
+            android:layout_marginTop="16dp"
+            android:layout_alignEnd="@id/imageViewTarjetaLanding"
+            android:layout_below="@id/imageViewTarjetaLanding"
+            android:elevation="8dp"
+            android:textAlignment="gravity"
+            android:textColor="#FFFF" />
+
+
+</RelativeLayout>

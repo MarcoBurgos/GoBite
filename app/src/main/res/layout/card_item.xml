@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:layout_marginBottom="16dp"
+    android:background="@color/colorPrimaryDark"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="4dp">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgProductoCarrito"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_below="@+id/nombreProductoCarrito"
+            android:scaleType="center"
+            />
+
+
+
+        <TextView
+            android:id="@+id/nombreProductoCarrito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Titular"
+            android:layout_alignParentTop="true"
+            android:layout_margin="16dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/TextosCafés"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/descripcionArmado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripciones"
+            android:layout_below="@id/nombreProductoCarrito"
+            android:layout_toEndOf="@id/imgProductoCarrito"
+            android:layout_toRightOf="@id/imgProductoCarrito"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textColor="@color/Subtítulos"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/tamañoProductoCarrito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/imgProductoCarrito"
+            android:layout_toRightOf="@id/imgProductoCarrito"
+            android:layout_below="@id/descripcionArmado"
+            android:layout_marginBottom="24dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="Tamaño"
+            android:textColor="@color/Subtítulos"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/precioProductoCarrito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/imgProductoCarrito"
+            android:layout_toRightOf="@id/imgProductoCarrito"
+            android:layout_below="@id/tamañoProductoCarrito"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textColor="@color/Subtítulos"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Precio"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:id="@+id/divisor"
+            android:layout_height="1dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_below="@+id/imgProductoCarrito"
+            android:background="@color/PrimariOscuro"
+            />
+
+        <View
+            android:layout_width="1dp"
+            android:id="@+id/divisorV"
+            android:layout_height="52dp"
+            android:layout_below="@+id/divisor"
+            android:layout_centerHorizontal="true"
+            android:background="@color/PrimariOscuro"
+            />
+
+
+        <TextView
+            android:id="@+id/botonRetirar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/divisor"
+            android:text="Eliminar"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:clickable="true"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textAppearance="?android:attr/textAppearanceLargePopupMenu"
+            android:textColor="@color/TextosNaranja"/>
+
+        <TextView
+            android:id="@+id/botonAgregarOtra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_alignParentRight="true"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:layout_below="@+id/divisor"
+            android:text="Ordenar otra"
+            android:clickable="true"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textAppearance="?android:attr/textAppearanceLargePopupMenu"
+            android:textColor="@color/TextosNaranja"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_below="@+id/botonAgregarOtra"
+            android:background="@android:color/white"
+            />
+
+        <Spinner
+            android:id="@+id/spinnerTamaño"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawSelectorOnTop="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_above="@+id/precioProductoCarrito"
+            android:layout_alignLeft="@+id/tamañoProductoCarrito"
+            android:layout_alignStart="@+id/tamañoProductoCarrito" />
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

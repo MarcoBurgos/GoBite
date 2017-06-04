@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">GoBite</string>
+    <string name="cargando">Cargando...</string>
+    <string name="usuario">Usuario</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="signin">"¿No tienes una cuenta? Regístrate</string>
+    <string name="olvido">¿Olvidaste tu contraseña? Recupérala</string>
+    <string name="intentos">Credenciales erróneas. Te quedan </string>
+    <string name="mail">"Correo electrónico"</string>
+    <string name="title_activity_restaurantes">RestaurantesActivity</string>
+
+    <string-array name="spinnerCarritoTamaño">
+        <item>Chica</item>
+        <item>Mediana</item>
+        <item>Grande</item>
+        <item>Extragrande</item>
+    </string-array>
+
+    <string-array name="spinnerCarritoCantidad">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+
+
+    </string-array>
+
+</resources>

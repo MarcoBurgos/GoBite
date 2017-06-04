@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context="com.marcoburgos.gobite.LogIn"
+    >
+
+    <ImageView
+        android:id="@+id/logoEnLogin"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:srcCompat="@drawable/logo"
+        android:layout_marginTop="28dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/editTextUsuario"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/logoEnLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="48dp"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:hint="@string/usuario"
+        android:inputType="textEmailAddress"
+        android:textColor="@android:color/holo_orange_light"
+        android:textColorHint="@android:color/holo_orange_dark"
+        android:textSize="20sp"
+        android:typeface="sans"
+         />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/editTextUsuario"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/background_light"
+        android:ems="10"
+        android:hint="@string/contraseña"
+        android:inputType="textPassword"
+        android:textColor="@android:color/holo_orange_light"
+        android:textColorHint="@android:color/holo_orange_dark"
+        android:textSize="20sp"
+        android:typeface="sans"
+         />
+
+    <Button
+        android:id="@+id/buttonIngresar"
+        android:layout_width="210dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/editTextPassword"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/holo_orange_light"
+        android:text="@string/ingresar"
+        android:textColor="#FFFFFF"
+         />
+
+    <TextView
+        android:id="@+id/textViewSingIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="42dp"
+        android:clickable="true"
+        android:textStyle="bold"
+        android:text="@string/signin"
+        android:textColor="#FFFFFF"
+        android:layout_above="@+id/textViewOlvido"
+        android:layout_centerHorizontal="true"
+
+         />
+
+    <TextView
+        android:id="@+id/textViewOlvido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:textStyle="bold"
+        android:layout_marginBottom="48dp"
+        android:text="@string/olvido"
+        android:textColor="#FFFFFF"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/textViewIntentos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+
+        android:contextClickable="true"
+        android:text="@string/intentos"
+        android:textColor="#FFFFFF"
+        android:visibility="invisible"
+        android:layout_below="@id/buttonIngresar"
+        android:layout_centerHorizontal="true"
+
+         />
+
+</RelativeLayout>

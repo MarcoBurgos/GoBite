@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+ <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content">
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="380dp"
+      android:layout_alignBottom="@+id/editTextFechaTarjeta"
+      android:background="#FFFF"
+      android:layout_marginLeft="16dp"
+      android:layout_marginRight="16dp"
+      android:layout_marginTop="64dp"
+      android:id="@+id/fondoEntrega"
+      />
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Información de pago"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="16dp"
+      android:textColor="@color/TextosCafés"
+      android:textStyle="bold"
+      android:textSize="24dp"
+      android:id="@+id/infoPagoTitular"/>
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="?attr/actionBarSize"
+      android:layout_below="@+id/botonPagarCarrito"
+      android:layout_marginTop="130dp"
+      android:background="@color/colorPrimary"
+      android:id="@+id/barraItems"/>
+
+  <TextView
+      android:id="@+id/totalPagar"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Total a pagar: $204.00"
+      android:textColor="#FFF"
+      android:textSize="16sp"
+      android:layout_alignBottom="@+id/barraItems"
+      android:layout_alignParentRight="true"
+      android:layout_marginRight="24dp"
+      android:layout_marginBottom="8dp"
+      android:textStyle="bold"
+      android:textAppearance="?android:attr/textAppearanceSmall"
+      />
+
+  <TextView
+      android:id="@+id/numItems"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Items: 5"
+      android:textColor="#FFF"
+      android:textSize="16sp"
+      android:layout_above="@+id/totalPagar"
+      android:layout_marginBottom="6dp"
+      android:layout_alignParentRight="true"
+      android:layout_marginRight="24dp"
+      android:textStyle="bold"
+      android:textAppearance="?android:attr/textAppearanceSmall"
+      />
+  <TextView
+      android:id="@+id/vendedorEntrega"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Número de tarjeta"
+      android:textAllCaps="true"
+      android:textSize="24dp"
+      android:layout_below="@id/infoPagoTitular"
+      android:layout_marginLeft="32dp"
+      android:layout_marginRight="32dp"
+      android:textColor="@color/TextosCafés"
+      android:layout_marginTop="32dp"
+      />
+
+  <EditText
+      android:id="@+id/nombreVendedorEntrega"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:layout_marginLeft="48dp"
+      android:layout_marginRight="48dp"
+      android:layout_below="@id/vendedorEntrega"
+      android:textAppearance="?android:attr/textAppearanceSmall"
+      android:textSize="18sp"
+      android:ems="15"
+      android:inputType="numberPassword"
+      android:hint="16 dígitos de la tarjeta"
+      android:textColorHint="@color/TextosNaranja"
+      android:focusableInTouchMode="true"
+      android:maxLength="16"
+      />
+
+
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/ubicacionEntrega"
+      android:text="Nombre"
+      android:textAllCaps="true"
+      android:layout_marginLeft="32dp"
+      android:layout_marginRight="32dp"
+      android:textSize="24sp"
+      android:textColor="@color/TextosCafés"
+      android:layout_marginTop="16dp"
+      android:layout_below="@id/nombreVendedorEntrega"/>
+
+  <EditText
+      android:id="@+id/detalleUbicacionEntrega"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:layout_marginLeft="48dp"
+      android:layout_marginRight="48dp"
+      android:layout_below="@id/ubicacionEntrega"
+      android:textAppearance="?android:attr/textAppearanceSmall"
+      android:textSize="18sp"
+      android:ems="15"
+      android:hint="Nombre del titular"
+      android:textColorHint="@color/TextosNaranja"
+      android:inputType="textAutoComplete"
+      android:focusableInTouchMode="true"/>
+
+
+
+  <EditText
+      android:layout_width="150dp"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/vencimientoTitular"
+      android:layout_marginLeft="48dp"
+      android:layout_marginTop="16dp"
+      android:inputType="numberPassword"
+      android:hint="MM/AA"
+      android:id="@+id/editTextFechaTarjeta"
+      android:textColorHint="@color/TextosNaranja"
+      android:focusableInTouchMode="true"
+      android:maxLength="4"
+
+      />
+
+  <EditText
+      android:id="@+id/CVV"
+      android:layout_width="100dp"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/vencimientoTitular"
+      android:layout_marginTop="16dp"
+      android:layout_toRightOf="@id/editTextFechaTarjeta"
+      android:layout_marginLeft="30dp"
+      android:layout_marginRight="46dp"
+      android:layout_alignParentRight="true"
+      android:hint="CVV"
+      android:focusableInTouchMode="true"
+      android:maxLength="3"
+      android:textColorHint="@color/TextosNaranja"/>
+
+  <TextView
+      android:id="@+id/vencimientoTitular"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Vencimiento"
+      android:textAllCaps="true"
+      android:textSize="24dp"
+      android:layout_below="@id/detalleUbicacionEntrega"
+      android:layout_marginLeft="32dp"
+      android:layout_marginRight="32dp"
+      android:textColor="@color/TextosCafés"
+      android:layout_marginTop="16dp"
+      />
+
+  <Button
+      android:id="@+id/botonPagarCarrito"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/editTextFechaTarjeta"
+      android:layout_alignParentRight="true"
+      android:layout_marginRight="16dp"
+      android:layout_marginTop="16dp"
+      android:background="@color/resaltar"
+      android:text="Pagar"
+      android:textColor="#FFF"
+      android:textStyle="bold"/>
+
+ </RelativeLayout>
+
+</ScrollView>

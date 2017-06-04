@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/FondoGris">
+
+   <View
+       android:layout_width="match_parent"
+       android:layout_height="380dp"
+       android:background="#FFFF"
+       android:layout_marginLeft="16dp"
+       android:layout_marginRight="16dp"
+       android:layout_marginTop="32dp"
+       android:id="@+id/fondoEntrega"
+       />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:id="@+id/barraItems"/>
+
+    <TextView
+        android:id="@+id/totalPagar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total a pagar: $204.00"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        android:layout_alignBottom="@+id/barraItems"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="8dp"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        />
+
+    <TextView
+        android:id="@+id/numItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Items: 5"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        android:layout_above="@+id/totalPagar"
+        android:layout_marginBottom="6dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        />
+    <TextView
+        android:id="@+id/vendedorEntrega"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vendedor"
+        android:textAllCaps="true"
+        android:textSize="28sp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:textColor="@color/TextosCafés"
+        android:layout_marginTop="60dp"
+        />
+
+    <TextView
+        android:id="@+id/nombreVendedorEntrega"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="McDonalds"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_below="@id/vendedorEntrega"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="18sp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:id="@+id/divisorEntregaVendedor"
+        android:layout_height="1dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="6dp"
+        android:layout_below="@+id/nombreVendedorEntrega"
+        android:background="@color/PrimariOscuro"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ubicacionEntrega"
+        android:text="Ubicación"
+        android:textAllCaps="true"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:textSize="28sp"
+        android:textColor="@color/TextosCafés"
+        android:layout_marginTop="32dp"
+        android:layout_below="@id/divisorEntregaVendedor"/>
+
+    <TextView
+        android:id="@+id/detalleUbicacionEntrega"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pasillo 1, local A1"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_below="@id/ubicacionEntrega"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="18sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:id="@+id/divisorEntregaUbicacion"
+        android:layout_height="1dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="6dp"
+        android:layout_below="@+id/detalleUbicacionEntrega"
+        android:background="@color/PrimariOscuro"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/programarEntrega"
+        android:text="Hora de entrega"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:textAllCaps="true"
+        android:textSize="28sp"
+        android:textColor="@color/TextosCafés"
+        android:layout_marginTop="32dp"
+        android:layout_below="@id/divisorEntregaUbicacion"/>
+
+    <TextView
+        android:id="@+id/detalleHoraEntrega"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginTop="16dp"
+        android:text="En cuanto esté lista mi orden"
+        android:layout_below="@id/programarEntrega"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="18sp"/>
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/programarEntrega"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="32dp"
+        android:checked="true"
+        android:id="@+id/spinnerHoraEntrega"/>
+
+    <TextView
+        android:id="@+id/elegirHoraEntrega"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fijar horario"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_below="@id/detalleHoraEntrega"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="18sp"/>
+
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerHoraEntrega"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="32dp">
+
+    </Spinner>
+    <View
+        android:layout_width="match_parent"
+        android:id="@+id/divisorProgramarEntrega"
+        android:layout_height="1dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="6dp"
+        android:layout_below="@+id/elegirHoraEntrega"
+        android:background="@color/PrimariOscuro"
+        />
+
+
+
+
+
+
+
+</RelativeLayout>

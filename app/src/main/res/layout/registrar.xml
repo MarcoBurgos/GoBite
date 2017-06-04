@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/logoRegistrar"/>
+
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/tituloRegistrar"
+    android:text="Regístrate"
+    android:layout_below="@id/logoRegistrar"
+    android:textSize="28dp"
+    android:textAllCaps="true"
+    android:layout_centerHorizontal="true"
+    android:textStyle="bold"
+    android:textColor="@color/colorPrimaryDark"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_marginTop="16dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="8dp"
+    />
+
+    <EditText
+        android:id="@+id/nombreRegistro"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:textColorHint="@color/TextosNaranja"
+        android:hint="Tu nombre"
+        android:layout_below="@id/tituloRegistrar"
+        android:layout_centerHorizontal="true"
+        android:inputType="textEmailAddress"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        />
+
+    <EditText
+        android:id="@+id/editTextMailRegistro"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_below="@id/nombreRegistro"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:textColorHint="@color/TextosNaranja"
+        android:hint="Correo electrónico"
+        android:inputType="textEmailAddress"
+         />
+
+    <EditText
+        android:id="@+id/editTextPasswordRegistro"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/editTextMailRegistro"
+        android:textColorHint="@color/TextosNaranja"
+        android:hint="Contraseña"
+        android:focusableInTouchMode="true"
+        android:inputType="textPassword"
+
+        />
+
+
+    <EditText
+        android:id="@+id/editTextPasswordConfirmarRegistro"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColorHint="@color/TextosNaranja"
+        android:hint="Repite tu contraseña"
+        android:layout_below="@id/editTextPasswordRegistro"
+        android:layout_centerHorizontal="true"
+        android:focusableInTouchMode="true"
+        android:inputType="textPassword"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+         />
+
+    <Button
+        android:id="@+id/buttonRegistrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Registrar"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/editTextPasswordConfirmarRegistro"
+        android:background="@color/resaltar"
+        android:textColor="#FFFF"
+        android:layout_centerHorizontal="true"
+         />
+
+    <TextView
+        android:id="@+id/textViewLoginRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Regresar al Login"
+        android:layout_below="@id/buttonRegistrar"
+        android:textSize="24dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/TextoCafeAlterno"
+         />
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="16dp"
+        android:background="@color/FondoGris"
+        android:layout_below="@id/textViewLoginRegistro"
+        android:id="@+id/extensorFondoBlancoDetalle"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        />
+</RelativeLayout>
+</ScrollView>

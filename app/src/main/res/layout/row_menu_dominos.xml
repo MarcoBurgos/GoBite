@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardMenusDominos"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:background="@color/colorPrimaryDark"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="4dp">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgPlatilloDominos"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/nombrePlatilloDominos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_below="@+id/imgPlatilloDominos"
+            android:text="Large Text"
+            android:textColor="@color/TextosCafés"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/descripciónPlatilloDominos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_below="@+id/nombrePlatilloDominos"
+            android:text="Small Text"
+            android:textColor="@color/TextoCafeAlterno"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <View
+            android:layout_width="match_parent"
+            android:id="@+id/divisorDominos"
+            android:layout_height="1dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_below="@+id/descripciónPlatilloDominos"
+            android:background="@color/PrimariOscuro"
+            />
+
+
+
+
+        <TextView
+            android:id="@+id/botonOrdenarMenuDominos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/divisorDominos"
+            android:text="Ver más"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textAppearance="?android:attr/textAppearanceLargePopupMenu"
+            android:textColor="@color/TextosNaranja"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_below="@+id/botonOrdenarMenuDominos"
+            android:background="@android:color/white"
+            />
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
