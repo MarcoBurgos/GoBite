@@ -4,8 +4,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.media.Image;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -15,13 +13,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 
 
-public class ConfigurarHamburgesa extends AppCompatActivity {
+public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnClickListener {
     Spinner spinnerCantidad;
     Spinner spinnerTamaño;
     ArrayAdapter<CharSequence> adaptador;
@@ -42,7 +41,75 @@ public class ConfigurarHamburgesa extends AppCompatActivity {
         actionBar.setDisplayShowHomeEnabled(true);
         setTitle("Arma tu pedido");
         setContentView(R.layout.scrolldown);
-        onButtonClickListener();
+
+
+        Button agregarCarrito = (Button)findViewById(R.id.BotonAñadirACarrito);
+        agregarCarrito.setOnClickListener(this);
+        final Switch conTodo = (Switch)findViewById(R.id.switch1);
+        conTodo.setOnClickListener(this);
+        final Switch cebolla = (Switch)findViewById(R.id.CebollaSwitch);
+        cebolla.setOnClickListener(this);
+        final Switch tomate = (Switch)findViewById(R.id.TomateSwitch);
+        tomate.setOnClickListener(this);
+        final Switch lechuga = (Switch)findViewById(R.id.LechugaSwitch);
+        lechuga.setOnClickListener(this);
+        final Switch queso = (Switch)findViewById(R.id.QuesoSwitch);
+        queso.setOnClickListener(this);
+        //Log.i("ConTodo", conTodo.toString());
+
+        cebolla.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    if (tomate.isChecked() && lechuga.isChecked() && queso.isChecked()) {
+                        conTodo.setChecked(true);
+                    }
+                }else{
+                    conTodo.setChecked(false);
+                }
+            }
+        });
+
+        tomate.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    if (cebolla.isChecked() && lechuga.isChecked() && queso.isChecked()) {
+                        conTodo.setChecked(true);
+                    }
+                }else{
+                    conTodo.setChecked(false);
+                }
+            }
+        });
+
+        lechuga.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    if (tomate.isChecked() && cebolla.isChecked() && queso.isChecked()) {
+                        conTodo.setChecked(true);
+                    }
+                }else{
+                    conTodo.setChecked(false);
+                }
+            }
+        });
+
+        queso.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    if (tomate.isChecked() && lechuga.isChecked() && cebolla.isChecked()) {
+                        conTodo.setChecked(true);
+                    }
+                }else{
+                    conTodo.setChecked(false);
+                }
+            }
+        });
+
+
         adaptador = new ArrayAdapter<CharSequence>(this, R.layout.spinner_estilo);
         spinnerCantidad = (Spinner)findViewById(R.id.spinnerCantidadDetalle);
         adaptador = ArrayAdapter.createFromResource(this,R.array.spinnerCarritoCantidad, android.R.layout.simple_spinner_item);
@@ -65,7 +132,7 @@ public class ConfigurarHamburgesa extends AppCompatActivity {
         } else {
             tituloDetalle= (String) savedInstanceState.getSerializable("Titulo");
         }
-        Log.d("ADebugTagPasado", "Value: " + tituloDetalle);
+        //Log.d("ADebugTagPasado", "Value: " + tituloDetalle);
         titular = (TextView)findViewById(R.id.nombreDetalleHamburgesa);
         if (tituloDetalle == null) {
             titular.setText(tituloDetalle);
@@ -101,37 +168,34 @@ public class ConfigurarHamburgesa extends AppCompatActivity {
         Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
         imagen.setImageBitmap(bmp);
 
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
-    public void onButtonClickListener() {
-        Button agregarCarrito = (Button)findViewById(R.id.BotonAñadirACarrito);
-        Switch conTodo = (Switch)findViewById(R.id.switch1);
-        final Switch cebolla = (Switch)findViewById(R.id.CebollaSwitch);
-        cebolla.setChecked(true);
 
-        conTodo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cebolla.setChecked(false);
-            }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // app icon in action bar clicked; go home
+                Intent intent = new Intent(this, McDonalds_Hamburgesas.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
-        });
 
-        agregarCarrito.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+
+            case R.id.BotonAñadirACarrito:
                 AlertDialog.Builder alerta_constructor = new AlertDialog.Builder(ConfigurarHamburgesa.this);
                 alerta_constructor.setMessage("¿Qué deseas hacer a continuación?")
                         .setCancelable(false)
@@ -152,28 +216,31 @@ public class ConfigurarHamburgesa extends AppCompatActivity {
                 AlertDialog alert = alerta_constructor.create();
                 alert.setTitle(("El producto ha sido añadido a tu carrito"));
                 alert.show();
-            }
+                break;
 
-        });
+            //case R.id.switch1:
+                // do your code
+            //    break;
 
-    }
+            //case R.id.CebollaSwitch:
+                //conTodo.setChecked(false);
+            //    break;
 
+            //case R.id.TomateSwitch:
+                //conTodo.setChecked(false);
+            //    break;
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                // app icon in action bar clicked; go home
-                Intent intent = new Intent(this, McDonalds_Hamburgesas.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                return true;
+            //case R.id.LechugaSwitch:
+                //conTodo.setChecked(false);
+            //    break;
+
+            //case R.id.QuesoSwitch:
+                //conTodo.setChecked(false);
+            //    break;
+
             default:
-                return super.onOptionsItemSelected(item);
+                break;
         }
+
     }
 }
