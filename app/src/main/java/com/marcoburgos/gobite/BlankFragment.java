@@ -6,9 +6,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;;
+import android.view.ViewGroup;
 
-public class BlankFragment extends Fragment {
+import java.util.ArrayList;
+
+public class BlankFragment extends Fragment  {
+
 
     public BlankFragment() {
         // Required empty public constructor
@@ -20,6 +23,8 @@ public class BlankFragment extends Fragment {
 
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -28,7 +33,13 @@ public class BlankFragment extends Fragment {
 
         RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rv_recycler_view);
         rv.setHasFixedSize(true);
-        MyAdapter adapter = new MyAdapter(new String[]{"Big Mac","Cuarto de Libra", "Mc Pollo", "Angus BCO", "Big Mac"});
+        ArrayList<Carrito_MC> datos = new ArrayList<Carrito_MC>();
+        datos.add(new Carrito_MC(R.drawable.bigmac, "Big Mac", "Con Todo", "Grande", "$79.00"));
+
+        MyAdapter adapter = new MyAdapter(datos);
+
+
+        //MyAdapter adapter = new MyAdapter(new String[]{"Big Mac","Cuarto de Libra", "Mc Pollo", "Angus BCO", "Big Mac"});
         rv.setAdapter(adapter);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
