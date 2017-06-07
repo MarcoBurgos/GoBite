@@ -69,8 +69,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(MyViewHolder holder, int i){
         holder.nombre.setText(item.get(i).getNombre_productoCarrito());
         holder.descripcion.setText(item.get(i).getDescripcion_productoCarrito());
-        holder.imagen.setImageResource(item.get(i).getImagen_productoCarrito());
+        holder.imagen.setImageBitmap(item.get(i).getImagen_productoCarrito());
         holder.precio.setText(item.get(i).getPrecio_productoCarrito());
+        holder.tamaño.setText(item.get(i).getTamaño_productoCarrito());
 
 
         //holder.mTextView.setText(mDataset[i]);

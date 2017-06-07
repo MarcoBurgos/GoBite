@@ -18,10 +18,12 @@
 
         <ImageView
             android:id="@+id/imgProductoCarrito"
-            android:layout_width="130dp"
+            android:layout_width="170dp"
             android:layout_height="130dp"
+            android:layout_marginLeft="8dp"
             android:layout_below="@+id/nombreProductoCarrito"
-            android:scaleType="center"
+            android:scaleType="centerInside"
+            android:src="@drawable/pollo"
             />
 
 

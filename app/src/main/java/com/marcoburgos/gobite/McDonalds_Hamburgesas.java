@@ -92,7 +92,6 @@ public class McDonalds_Hamburgesas extends AppCompatActivity implements Hamburge
         //Toast.makeText(getApplicationContext(), "Posición " +(p+1), Toast.LENGTH_LONG).show();
         Intent i = new Intent(this, ConfigurarHamburgesa.class);
         i.putExtra("Titulo",titulo.toString());
-        //Log.d("ADebugTagPasando", "Value: " + titulo);
         i.putExtra("Precio", precio.toString());
         i.putExtra("Imagen", byteArray);
         startActivity(i);

@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +20,8 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import java.io.ByteArrayOutputStream;
+
 
 public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnClickListener {
     Spinner spinnerCantidad;
@@ -28,6 +31,7 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
     TextView titular;
     TextView precio;
     ImageView imagen;
+    byte[] byteArray;
 
 
 
@@ -203,6 +207,12 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 Intent intent = new Intent(ConfigurarHamburgesa.this, MainActivityCarrito.class);
+                                intent.putExtra("TitularCarrito", titular.getText());
+                                Bitmap bmp = ((BitmapDrawable)imagen.getDrawable()).getBitmap();
+                                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                                bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                                byte[] byteArray = stream.toByteArray();
+                                intent.putExtra("Imagen", byteArray);
                                 startActivity(intent);
                             }
                         })
