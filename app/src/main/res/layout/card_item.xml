@@ -35,6 +35,8 @@
             android:text="Titular"
             android:layout_alignParentTop="true"
             android:layout_margin="16dp"
+            android:textStyle="bold"
+            android:textSize="28sp"
             android:layout_centerHorizontal="true"
             android:textColor="@color/TextosCafés"
             android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -88,8 +90,8 @@
             android:layout_height="1dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginTop="24dp"
-            android:layout_below="@+id/imgProductoCarrito"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/precioProductoCarrito"
             android:background="@color/PrimariOscuro"
             />
 
