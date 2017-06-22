@@ -20,8 +20,6 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
 
 
 public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnClickListener {
@@ -32,7 +30,6 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
     TextView titular;
     TextView precio;
     ImageView imagen;
-    byte[] byteArray;
     Bitmap imagenparaMandar;
 
 
@@ -116,6 +113,24 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
                 }else{
                     conTodo.setChecked(false);
                 }
+            }
+        });
+
+        conTodo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    tomate.setChecked(true);
+                    cebolla.setChecked(true);
+                    lechuga.setChecked(true);
+                    queso.setChecked(true);
+                    }
+                /*else {
+                    tomate.setChecked(false);
+                    cebolla.setChecked(false);
+                    lechuga.setChecked(false);
+                    queso.setChecked(false);
+                }*/
             }
         });
 
@@ -216,13 +231,6 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 Intent intent = new Intent(ConfigurarHamburgesa.this, MainActivityCarrito.class);
-                                intent.putExtra("TitularCarrito", titular.getText());
-                                Bitmap bmp = ((BitmapDrawable)imagen.getDrawable()).getBitmap();
-                                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                                bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                                byteArray = stream.toByteArray();
-                                intent.putExtra("Imagen", byteArray);
-                                intent.putExtra("Precio", precio.getText());
                                 guardarCarrito(new GuardoCarrito());
                                 startActivity(intent);
                             }
@@ -267,18 +275,13 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
     }
 
     public void guardarCarrito(GuardoCarrito clase) {
-        Log.d("ADebugMando", "Value: " + titular.getText());
-        Log.d("ADebugMando", "Value: " + precio.getText());
+        /*Log.d("ADebugMando", "Value: " + titular.getText());
+        Log.d("ADebugMando", "Value: " + precio.getText());*/
         clase.reciboCarrito(imagenparaMandar, titular.getText(), precio.getText());
     }
 
 
 
-    /*public static void guardoDatos(byte[] imagenCarrito, CharSequence tituloCarrito, CharSequence precioCarrito) {
-        ArrayList<CarritoCompra_MC> datos = new ArrayList<CarritoCompra_MC>();
-        datos.add(new CarritoCompra_MC(imagenCarrito, tituloCarrito, precioCarrito));
-
-    }*/
 
 
 

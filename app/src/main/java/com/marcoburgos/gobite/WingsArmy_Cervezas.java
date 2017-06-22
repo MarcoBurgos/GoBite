@@ -27,7 +27,7 @@ public class WingsArmy_Cervezas extends AppCompatActivity implements WingsArmyCe
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.mipmap.arrow_left);
         actionBar.setDisplayShowHomeEnabled(true);
-        setTitle("Boneless");
+        setTitle("Cervezas");
         setContentView(R.layout.activity_main_wingsarmy_cervezas);
         ArrayList<WingsArmyCervezas_MC> datos = new ArrayList<WingsArmyCervezas_MC>();
         datos.add(new WingsArmyCervezas_MC(R.drawable.coronawa, "Corona", "Con 90 años de historia y presencia en más de 180 países, Corona Extra es la cerveza mexicana de mayor venta en el mundo. Su sabor refrescante es ideal para nuestras alitas ardientes.", "$30.00"));

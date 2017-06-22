@@ -1,7 +1,9 @@
 package com.marcoburgos.gobite;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInstaller;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
@@ -21,12 +23,13 @@ public class LogIn extends AppCompatActivity {
     private TextView textViewIntentos;
     private TextView textViewRegistrate;
     private TextView textViewOlvido;
+    public static final String MIS_PREFS = "SharedPreferences";
 
 
     private int contadorIntentos = 3;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -50,6 +53,7 @@ public class LogIn extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),
                             "Ingresando...",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LogIn.this, Landing.class);
+                    saveLoggedInUId("admin", "admin");
                     startActivity(intent);
                     finish();
 
@@ -78,6 +82,23 @@ public class LogIn extends AppCompatActivity {
                 finish();
             }
         });
+
+    }
+
+    private void saveLoggedInUId(String username, String password) {
+        /*SharedPreferences settings = getSharedPreferences(MIS_PREFS, 0);
+        SharedPreferences.Editor myEditor = settings.edit();
+        myEditor.putString("usuario", username);
+        myEditor.putString("password", password);
+        //boolean rememberThis = recordarCredenciales.isChecked();
+        //myEditor.putBoolean("recordar", rememberThis);
+        myEditor.commit();*/
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("Usuario",username);
+        editor.putString("Contraseña",password);
+        editor.apply();
 
     }
 }

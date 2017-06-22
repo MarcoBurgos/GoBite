@@ -1,6 +1,8 @@
 package com.marcoburgos.gobite;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -70,6 +72,12 @@ public class Registrar extends AppCompatActivity implements View.OnClickListener
                                 //register();
                 break;
             case R.id.textViewLoginRegistro:
+
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("Usuario",etEmail.getText().toString());
+                editor.putString("Contraseña",etPassword.getText().toString());
+                editor.apply();
                 startActivity(new Intent(Registrar.this,LogIn.class));
                 finish();
                 break;

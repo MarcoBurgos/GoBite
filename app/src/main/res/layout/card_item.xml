@@ -92,7 +92,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginTop="16dp"
             android:layout_below="@+id/precioProductoCarrito"
-            android:background="@color/PrimariOscuro"
+            android:background="@color/TextosCafés"
             />
 
         <View
@@ -101,7 +101,7 @@
             android:layout_height="52dp"
             android:layout_below="@+id/divisor"
             android:layout_centerHorizontal="true"
-            android:background="@color/PrimariOscuro"
+            android:background="@color/TextosCafés"
             />
 
 
@@ -121,7 +121,7 @@
             android:textStyle="bold"
             android:textAllCaps="true"
             android:textAppearance="?android:attr/textAppearanceLargePopupMenu"
-            android:textColor="@color/TextosNaranja"/>
+            android:textColor="@color/TextoCafeAlterno"/>
 
         <TextView
             android:id="@+id/botonAgregarOtra"
@@ -138,7 +138,7 @@
             android:textStyle="bold"
             android:textAllCaps="true"
             android:textAppearance="?android:attr/textAppearanceLargePopupMenu"
-            android:textColor="@color/TextosNaranja"/>
+            android:textColor="@color/TextoCafeAlterno"/>
 
         <View
             android:layout_width="match_parent"

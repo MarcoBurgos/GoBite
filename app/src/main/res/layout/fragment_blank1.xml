@@ -40,7 +40,7 @@
         android:id="@+id/numItems"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Items: 5"
+        android:text="Artículos: 5"
         android:textColor="#FFF"
         android:textSize="16sp"
         android:layout_above="@+id/totalPagar"

@@ -29,13 +29,14 @@
         android:layout_marginTop="48dp"
         android:background="@android:color/white"
         android:ems="10"
+        android:paddingLeft="8dp"
         android:hint="@string/usuario"
         android:inputType="textEmailAddress"
         android:textColor="@android:color/holo_orange_light"
         android:textColorHint="@android:color/holo_orange_dark"
         android:textSize="20sp"
         android:typeface="sans"
-         />
+        />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -48,13 +49,14 @@
         android:layout_centerHorizontal="true"
         android:background="@android:color/background_light"
         android:ems="10"
+        android:paddingLeft="8dp"
         android:hint="@string/contraseña"
         android:inputType="textPassword"
         android:textColor="@android:color/holo_orange_light"
         android:textColorHint="@android:color/holo_orange_dark"
         android:textSize="20sp"
         android:typeface="sans"
-         />
+        />
 
     <Button
         android:id="@+id/buttonIngresar"
@@ -68,7 +70,7 @@
         android:background="@android:color/holo_orange_light"
         android:text="@string/ingresar"
         android:textColor="#FFFFFF"
-         />
+        />
 
     <TextView
         android:id="@+id/textViewSingIn"
@@ -84,7 +86,7 @@
         android:layout_above="@+id/textViewOlvido"
         android:layout_centerHorizontal="true"
 
-         />
+        />
 
     <TextView
         android:id="@+id/textViewOlvido"
@@ -117,6 +119,6 @@
         android:layout_below="@id/buttonIngresar"
         android:layout_centerHorizontal="true"
 
-         />
+        />
 
 </RelativeLayout>
