@@ -18,7 +18,7 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 
-public class ConfigurarPizza extends AppCompatActivity implements View.OnClickListener {
+public class ConfigurarComplemento extends AppCompatActivity implements View.OnClickListener {
     Spinner spinnerCantidad;
     Spinner spinnerTamaño;
     ArrayAdapter<CharSequence> adaptador;
@@ -36,93 +36,13 @@ public class ConfigurarPizza extends AppCompatActivity implements View.OnClickLi
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.mipmap.arrow_left);
         actionBar.setDisplayShowHomeEnabled(true);
-        setTitle("Arma tu pizza");
+        setTitle("Arma tu complemento");
         setContentView(R.layout.scrolldown_pizza);
 
 
         Button agregarCarrito = (Button)findViewById(R.id.BotonAñadirACarrito);
         agregarCarrito.setOnClickListener(this);
-        final Switch conTodo = (Switch)findViewById(R.id.switch1);
-        conTodo.setOnClickListener(this);
-        final Switch cebolla = (Switch)findViewById(R.id.CebollaSwitch);
-        cebolla.setOnClickListener(this);
-        final Switch tomate = (Switch)findViewById(R.id.TomateSwitch);
-        tomate.setOnClickListener(this);
-        final Switch lechuga = (Switch)findViewById(R.id.LechugaSwitch);
-        lechuga.setOnClickListener(this);
-        final Switch queso = (Switch)findViewById(R.id.QuesoSwitch);
-        queso.setOnClickListener(this);
 
-
-        cebolla.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    if (tomate.isChecked() && lechuga.isChecked() && queso.isChecked()) {
-                        conTodo.setChecked(true);
-                    }
-                }else{
-                    conTodo.setChecked(false);
-                }
-            }
-        });
-
-        tomate.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    if (cebolla.isChecked() && lechuga.isChecked() && queso.isChecked()) {
-                        conTodo.setChecked(true);
-                    }
-                }else{
-                    conTodo.setChecked(false);
-                }
-            }
-        });
-
-        lechuga.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    if (tomate.isChecked() && cebolla.isChecked() && queso.isChecked()) {
-                        conTodo.setChecked(true);
-                    }
-                }else{
-                    conTodo.setChecked(false);
-                }
-            }
-        });
-
-        queso.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    if (tomate.isChecked() && lechuga.isChecked() && cebolla.isChecked()) {
-                        conTodo.setChecked(true);
-                    }
-                }else{
-                    conTodo.setChecked(false);
-                }
-            }
-        });
-
-        conTodo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    tomate.setChecked(true);
-                    cebolla.setChecked(true);
-                    lechuga.setChecked(true);
-                    queso.setChecked(true);
-                }
-                /*else {
-                    tomate.setChecked(false);
-                    cebolla.setChecked(false);
-                    lechuga.setChecked(false);
-                    queso.setChecked(false);
-                }*/
-            }
-        });
 
 
         adaptador = new ArrayAdapter<CharSequence>(this, R.layout.spinner_estilo);
@@ -198,7 +118,7 @@ public class ConfigurarPizza extends AppCompatActivity implements View.OnClickLi
         switch (item.getItemId()) {
             case android.R.id.home:
                 // app icon in action bar clicked; go home
-                Intent intent = new Intent(this, Dominos_Pizzas.class);
+                Intent intent = new Intent(this, McDonalds_Complementos.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 return true;
@@ -213,13 +133,13 @@ public class ConfigurarPizza extends AppCompatActivity implements View.OnClickLi
 
 
             case R.id.BotonAñadirACarrito:
-                AlertDialog.Builder alerta_constructor = new AlertDialog.Builder(ConfigurarPizza.this);
+                AlertDialog.Builder alerta_constructor = new AlertDialog.Builder(ConfigurarComplemento.this);
                 alerta_constructor.setMessage("¿Qué deseas hacer a continuación?")
                         .setCancelable(false)
                         .setPositiveButton("Ir al carrito", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Intent intent = new Intent(ConfigurarPizza.this, MainActivityCarrito.class);
+                                Intent intent = new Intent(ConfigurarComplemento.this, MainActivityCarrito.class);
                                 guardarCarrito(new GuardoCarrito());
                                 startActivity(intent);
                             }
@@ -227,7 +147,7 @@ public class ConfigurarPizza extends AppCompatActivity implements View.OnClickLi
                         .setNegativeButton("Regresar al Menú", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Intent intent = new Intent(ConfigurarPizza.this, MainActivity_Menu.class);
+                                Intent intent = new Intent(ConfigurarComplemento.this, MainActivity_Menu.class);
                                 guardarCarrito(new GuardoCarrito());
                                 startActivity(intent);
                             }

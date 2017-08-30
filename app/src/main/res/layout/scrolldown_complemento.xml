@@ -76,36 +76,17 @@
 
 
 
-        <TextView
-            android:id="@+id/conTodo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Con Todo"
-            android:layout_below="@id/cantidadProducto"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/TextoCafeAlterno"
-            android:layout_marginStart="32dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="24dp" />
 
-        <Switch
-            android:id="@+id/switch1"
-            android:checked="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="40dp"
-            android:layout_below="@id/cantidadProducto"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="24dp"
+
+
             />
 
         <TextView
             android:id="@+id/armaTuGusto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Arma a tu gusto la pizza 1"
-            android:layout_below="@id/conTodo"
+            android:text="Eligue el tamaño del complemento 1"
+            android:layout_below="@id/cantidadProducto"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@color/TextoCafeAlterno"
@@ -171,41 +152,8 @@
 
 
 
-        <TextView
-            android:id="@+id/textoCebolla"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="48dp"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/tamañoProducto"
-            android:text="Jamón"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textColor="@color/TextoCafeAlterno" />
 
-        <TextView
-            android:id="@+id/textoQueso"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="48dp"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/textoCebolla"
-            android:text="Piña"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textColor="@color/TextoCafeAlterno" />
 
-        <TextView
-            android:id="@+id/textoTomate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="48dp"
-            android:layout_below="@+id/textoQueso"
-            android:text="Queso"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textColor="@color/TextoCafeAlterno"
-            />
 
 
 
@@ -215,7 +163,7 @@
             android:id="@+id/BotonAñadirACarrito"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textoTomate"
+            android:layout_below="@id/tamañoProducto"
             android:layout_centerHorizontal="true"
             android:layout_marginEnd="16dp"
             android:layout_marginLeft="16dp"
@@ -229,38 +177,8 @@
             />
 
 
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/spinnerTamañoDetalle"
-            android:layout_alignBaseline="@id/textoCebolla"
-            android:layout_marginRight="40dp"
-            android:id="@+id/CebollaSwitch"
-            android:checked="true"
-            />
 
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/CebollaSwitch"
-            android:layout_alignBaseline="@id/textoTomate"
-            android:layout_marginRight="40dp"
-            android:id="@+id/TomateSwitch"
-            android:checked="true"
-            />
 
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignBaseline="@id/textoQueso"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="40dp"
-            android:id="@+id/QuesoSwitch"
-            android:checked="true"
-            />
 
         <Spinner
             android:layout_width="wrap_content"

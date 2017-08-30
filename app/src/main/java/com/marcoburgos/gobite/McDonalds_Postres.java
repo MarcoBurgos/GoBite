@@ -72,8 +72,12 @@ public class McDonalds_Postres extends AppCompatActivity implements PostresMcDon
         }
 }
     @Override
-    public void onItemClick(int p) {
-        Intent i = new Intent(this, ConfigurarHamburgesa.class);
+    public void onItemClick(int p, CharSequence titulo, CharSequence precio,  byte[] byteArray) {
+        //Toast.makeText(getApplicationContext(), "Posición " +(p+1), Toast.LENGTH_LONG).show();
+        Intent i = new Intent(this, ConfigurarPostre.class);
+        i.putExtra("Titulo",titulo.toString());
+        i.putExtra("Precio", precio.toString());
+        i.putExtra("Imagen", byteArray);
         startActivity(i);
     }
 }

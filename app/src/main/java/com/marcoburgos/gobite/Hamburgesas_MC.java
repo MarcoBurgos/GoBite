@@ -31,4 +31,12 @@ public class Hamburgesas_MC  {
         return descripcion_hamburgesa;
     }
     public String getprecio_hamburgesa() { return precio_hamburgesa; }
+
+
+    public double sumarProductos (String precio_hamburgesa) {
+
+
+        return 0;
+    }
+
 }

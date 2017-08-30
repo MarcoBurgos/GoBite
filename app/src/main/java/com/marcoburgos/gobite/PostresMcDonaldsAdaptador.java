@@ -1,5 +1,7 @@
 package com.marcoburgos.gobite;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 /**
@@ -19,7 +22,7 @@ public class PostresMcDonaldsAdaptador extends RecyclerView.Adapter<PostresMcDon
 
     private ItemClickCallback itemClickCallback;
     public interface ItemClickCallback {
-        void onItemClick(int p);
+        void onItemClick(int p, CharSequence nombre, CharSequence precio, byte[] imagen);
     }
 
     public void setItemClickCallback(final ItemClickCallback itemClickCallback) {
@@ -72,7 +75,11 @@ public class PostresMcDonaldsAdaptador extends RecyclerView.Adapter<PostresMcDon
         @Override
         public void onClick(View v) {
             if (v.getId() == R.id.cardDetallesPostresMcd ){
-                itemClickCallback.onItemClick(getAdapterPosition());
+                Bitmap bmp = ((BitmapDrawable)imagen.getDrawable()).getBitmap();
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] byteArray = stream.toByteArray();
+                itemClickCallback.onItemClick(getAdapterPosition(), nombre.getText(), precio.getText(), byteArray);
             }
         }
 

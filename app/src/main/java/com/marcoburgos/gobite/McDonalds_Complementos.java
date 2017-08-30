@@ -45,8 +45,6 @@ public class McDonalds_Complementos extends AppCompatActivity implements Complem
         adaptador.setItemClickCallback(this);
 
 
-
-
     }
 
     @Override
@@ -65,10 +63,15 @@ public class McDonalds_Complementos extends AppCompatActivity implements Complem
             default:
                 return super.onOptionsItemSelected(item);
         }
-}
+    }
+
     @Override
-    public void onItemClick(int p) {
-        Intent i = new Intent(this, ConfigurarHamburgesa.class);
+    public void onItemClick(int p, CharSequence titulo, CharSequence precio, byte[] byteArray) {
+        //Toast.makeText(getApplicationContext(), "Posición " +(p+1), Toast.LENGTH_LONG).show();
+        Intent i = new Intent(this, ConfigurarComplemento.class);
+        i.putExtra("Titulo", titulo.toString());
+        i.putExtra("Precio", precio.toString());
+        i.putExtra("Imagen", byteArray);
         startActivity(i);
     }
 }

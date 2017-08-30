@@ -71,8 +71,12 @@ public class Dominos_Pizzas extends AppCompatActivity implements PizzasAdaptador
         }
 }
     @Override
-    public void onItemClick(int p) {
+    public void onItemClick(int p, CharSequence titulo, CharSequence precio,  byte[] byteArray) {
+        //Toast.makeText(getApplicationContext(), "Posición " +(p+1), Toast.LENGTH_LONG).show();
         Intent i = new Intent(this, ConfigurarPizza.class);
+        i.putExtra("Titulo",titulo.toString());
+        i.putExtra("Precio", precio.toString());
+        i.putExtra("Imagen", byteArray);
         startActivity(i);
     }
 }
