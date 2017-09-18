@@ -31,6 +31,10 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="SpinnerTarjeta" parent="Widget.AppCompat.Spinner">
+        <item name="backgroundTint">@color/TextosNaranja</item>
+    </style>
+
 
 </resources>
 

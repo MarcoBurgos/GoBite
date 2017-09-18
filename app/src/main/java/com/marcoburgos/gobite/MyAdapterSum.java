@@ -52,9 +52,6 @@ public class MyAdapterSum extends RecyclerView.Adapter<MyAdapterSum.MyViewHolder
 
     }
 
-    //public MyAdapter(String[] myDataset){
-    //    mDataset = myDataset;
-    //}
 
     @Override
     public MyAdapterSum.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType){

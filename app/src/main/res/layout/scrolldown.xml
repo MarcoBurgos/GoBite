@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android">
@@ -116,6 +115,23 @@
             />
 
 
+        <Button
+            android:id="@+id/BotonAñadirACarrito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textoQueso"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/PrimariOscuro"
+            android:padding="8dp"
+            android:text="Añadir al carrito"
+            android:textColor="#FFFF"
+            />
+
         <View
             android:layout_width="40dp"
             android:layout_height="1dp"
@@ -156,19 +172,6 @@
             android:id="@+id/fondoAmarilloDetalle" />
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginLeft="48dp"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/armaTuGusto"
-            android:text="Tamaño"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textColor="@color/TextoCafeAlterno"
-            android:id="@+id/tamañoProducto"
-            />
-
 
 
 
@@ -176,10 +179,10 @@
             android:id="@+id/textoCebolla"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="48dp"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/tamañoProducto"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="16dp"
             android:text="Cebolla"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:textColor="@color/TextoCafeAlterno" />
@@ -188,21 +191,32 @@
             android:id="@+id/textoTomate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="48dp"
             android:layout_below="@+id/textoCebolla"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="16dp"
             android:text="Tomate"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textColor="@color/TextoCafeAlterno"
-            />
+            android:textColor="@color/TextoCafeAlterno" />
+
+        <TextView
+            android:id="@+id/tamañoProducto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/armaTuGusto"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="32dp"
+            android:text="Tamaño"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/TextoCafeAlterno" />
 
         <TextView
             android:id="@+id/textoLechuga"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="48dp"
             android:layout_below="@id/textoTomate"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="16dp"
             android:text="Lechuga"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:textColor="@color/TextoCafeAlterno" />
@@ -211,32 +225,13 @@
             android:id="@+id/textoQueso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
             android:layout_below="@id/textoLechuga"
+            android:layout_marginLeft="16dp"
             android:layout_marginStart="48dp"
             android:layout_marginTop="16dp"
             android:text="Queso"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:textColor="@color/TextoCafeAlterno" />
-
-
-
-        <Button
-            android:id="@+id/BotonAñadirACarrito"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textoQueso"
-            android:layout_centerHorizontal="true"
-            android:layout_marginEnd="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/PrimariOscuro"
-            android:padding="8dp"
-            android:text="Añadir al carrito"
-            android:textColor="#FFFF"
-            />
 
 
         <Switch
@@ -260,6 +255,7 @@
             android:id="@+id/TomateSwitch"
             android:checked="true"
             />
+
         <Switch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -268,9 +264,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginRight="40dp"
             android:id="@+id/LechugaSwitch"
-            android:checked="true"
+            android:checked="true" />
 
-            />
         <Switch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -289,9 +284,7 @@
             android:layout_marginRight="40dp"
             android:layout_below="@id/precioDetalleHamburgesa"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="16dp"
-            >
-
+            android:layout_marginTop="16dp">
         </Spinner>
 
         <Spinner
@@ -302,7 +295,7 @@
             android:layout_alignBottom="@+id/tamañoProducto"
             android:layout_alignParentRight="true"
             android:layout_marginTop="24dp">
-
         </Spinner>
+
     </RelativeLayout>
 </ScrollView>

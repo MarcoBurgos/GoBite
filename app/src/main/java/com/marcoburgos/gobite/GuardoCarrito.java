@@ -18,19 +18,16 @@ static ArrayList<CarritoCompra_MC> datos = new ArrayList<CarritoCompra_MC>();
 
 
     public static void reciboCarrito (Bitmap imagenCarrito, CharSequence tituloCarrito, CharSequence precioCarrito) {
-        Log.d("ADebugPrecioNuevo", "Value: " + precioCarrito);
         datos.add(new CarritoCompra_MC(imagenCarrito, tituloCarrito, "Con Todo", "Grande", precioCarrito));
         CharSequence cadenaCorta = precioCarrito.toString().substring(1);
         Float precioacumulado = Float.parseFloat(cadenaCorta.toString());
-        Log.d("ADebugPrecioAcumulado", "Value: " + precioacumulado);
         mandoPrecio = mandoPrecio+precioacumulado;
-        Log.d("ADebugPreciollevo", "Value: " + mandoPrecio);
         precioTotalCarrito = mandoPrecio;
 
+    }
 
-
-
-
+    public static void borroCarrito() {
+        datos.clear();
     }
 
     public static ArrayList<CarritoCompra_MC> mandoCarrito() {

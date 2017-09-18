@@ -17,12 +17,12 @@ import java.util.ArrayList;
 public class BlankFragment extends Fragment {
 
 
-    ArrayList productosCarrito, datos;
+    ArrayList productosCarrito;
 
 
 
-    public void recuperoCarrito(GuardoCarrito clase) {
-        productosCarrito = clase.mandoCarrito();
+    public void recuperoCarrito(GuardoCarrito reciboCarrito) {
+        productosCarrito = reciboCarrito.mandoCarrito();
     }
 
 

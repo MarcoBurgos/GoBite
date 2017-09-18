@@ -47,12 +47,12 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
         actionBar.setHomeAsUpIndicator(R.mipmap.arrow_left);
         actionBar.setDisplayShowHomeEnabled(true);
         setTitle("Arma tu pedido");
-        setContentView(R.layout.scrolldown);
+        setContentView(R.layout.configurar_hamburgesa);
 
 
         Button agregarCarrito = (Button)findViewById(R.id.BotonAñadirACarrito);
         agregarCarrito.setOnClickListener(this);
-        final Switch conTodo = (Switch)findViewById(R.id.switch1);
+        final Switch conTodo = (Switch)findViewById(R.id.switchConTodo);
         conTodo.setOnClickListener(this);
         final Switch cebolla = (Switch)findViewById(R.id.CebollaSwitch);
         cebolla.setOnClickListener(this);
@@ -158,7 +158,7 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
             tituloDetalle= (String) savedInstanceState.getSerializable("Titulo");
         }
         //Log.d("ADebugTagPasado", "Value: " + tituloDetalle);
-        titular = (TextView)findViewById(R.id.nombreDetalleHamburgesa);
+        titular = (TextView)findViewById(R.id.nombreDetalleProducto);
         if (tituloDetalle == null) {
             titular.setText(tituloDetalle);
         }
@@ -179,7 +179,7 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
             precioDetalle= (String) savedInstanceState.getSerializable("Precio");
         }
 
-        precio = (TextView)findViewById(R.id.precioDetalleHamburgesa);
+        precio = (TextView)findViewById(R.id.precioDetalleProducto);
         if (precioDetalle == null) {
             precio.setText("Valio madre");
         }
