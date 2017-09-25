@@ -21,7 +21,8 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import io.card.payment.CardIOActivity;
+import io.card.payment.CreditCard;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
@@ -29,11 +30,13 @@ import java.util.Arrays;
 
 public class BlankFragment2 extends Fragment {
 
+
+    private final int MY_SCAN_REQUEST_CODE =0;
     Float precioCarrito;
     int tamañoCarrito;
     TextView articulosTotales, precioTotal;
     List<EditText> campos;
-    Button btn;
+    Button btn, btnEscaner;
     EditText numeroTarjeta;
     EditText nombreTitular;
     EditText vencimiento;
@@ -41,6 +44,8 @@ public class BlankFragment2 extends Fragment {
     String tarjeta;
     int count = 0;
     CheckBox guardarDatos;
+    protected String stringTarjeta;
+
 
     public BlankFragment2() {
         // Required empty public constructor
@@ -84,35 +89,28 @@ public class BlankFragment2 extends Fragment {
         validador = (EditText)rootView.findViewById(R.id.CVV);
         guardarDatos = (CheckBox) rootView.findViewById(R.id.guardarDatosPago);
         campos = Arrays.asList(numeroTarjeta, nombreTitular, vencimiento, validador);
+        btnEscaner =(Button) rootView.findViewById(R.id.botonEscanearTarjeta);
 
-        pongodatos();Log.d("prueba", "datos");
+        btnEscaner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onScanPress(v);
+            }
+        });
+
+
 
         if (guardarDatos.isChecked()) {
             pongodatos();
-            Log.d("prueba", "los dejo");
-            Log.d("prueba", "tarjeta es: " + numeroTarjeta.getText().toString());
+
         }
         else {
-            Log.d("prueba", "los qquito");
             eliminoTarjetaDatos();
             numeroTarjeta.setText("");
             nombreTitular.setText("");
             vencimiento.setText("");
             guardarDatos.setChecked(false);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         numeroTarjeta.addTextChangedListener(new TextWatcher() {
@@ -218,6 +216,8 @@ public class BlankFragment2 extends Fragment {
 
     }
 
+
+
    /* @Override
     public void onSaveInstanceState(Bundle outState) {
         outState.putString("tarjeta", tarjeta);
@@ -278,6 +278,54 @@ public class BlankFragment2 extends Fragment {
         guardarDatos.setChecked(checkboxGuardado);
 
 
+    }
+
+    public void onScanPress(View v) {
+        Intent scanIntent = new Intent(getActivity(), CardIOActivity.class);
+
+        // customize these values to suit your needs.
+        scanIntent.putExtra(CardIOActivity.EXTRA_REQUIRE_EXPIRY, true); // default: false
+        scanIntent.putExtra(CardIOActivity.EXTRA_REQUIRE_CVV, true); // default: false
+        scanIntent.putExtra(CardIOActivity.EXTRA_REQUIRE_POSTAL_CODE, false); // default: false
+        scanIntent.putExtra(CardIOActivity.EXTRA_USE_PAYPAL_ACTIONBAR_ICON, false);
+        scanIntent.putExtra(CardIOActivity.EXTRA_SUPPRESS_MANUAL_ENTRY, true);
+        scanIntent.putExtra(CardIOActivity.EXTRA_USE_CARDIO_LOGO, false);
+        scanIntent.putExtra(CardIOActivity.EXTRA_GUIDE_COLOR, ContextCompat.getColor(getActivity(), R.color.colorPrimary));
+        // MY_SCAN_REQUEST_CODE is arbitrary and is only used within this activity.
+        startActivityForResult(scanIntent, MY_SCAN_REQUEST_CODE);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == MY_SCAN_REQUEST_CODE) {
+            String resultDisplayStr;
+            if (data != null && data.hasExtra(CardIOActivity.EXTRA_SCAN_RESULT)) {
+                CreditCard scanResult = data.getParcelableExtra(CardIOActivity.EXTRA_SCAN_RESULT);
+
+                // Never log a raw card number. Avoid displaying it, but if necessary use getFormattedCardNumber()
+                stringTarjeta = scanResult.getFormattedCardNumber() + "\n";
+                numeroTarjeta.setText(scanResult.getRedactedCardNumber());
+                // Do something with the raw number, e.g.:
+                // myService.setCardNumber( scanResult.cardNumber );
+
+                if (scanResult.isExpiryValid()) {
+                    String vencimientoString = String.valueOf(scanResult.expiryMonth) + String.valueOf(scanResult.expiryYear);
+                    vencimiento.setText(vencimientoString);//se agrego el string value of
+                }
+
+                if (scanResult.cvv != null) {
+                    validador.setText(scanResult.cvv);
+                }
+
+            } else {
+                resultDisplayStr = "Scan was canceled.";
+            }
+            // do something with resultDisplayStr, maybe display it in a textView
+            // resultTextView.setText(resultDisplayStr);
+        }
+        // else handle other activity results
     }
 
 }

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.marcoburgos.gobite"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -32,5 +32,6 @@ dependencies {
     compile 'com.android.support:support-v4:25.1.0'
     compile 'com.android.support:support-vector-drawable:25.1.0'
     compile 'com.android.support:design:25.1.0'
+    compile 'io.card:android-sdk:5.5.1'
     testCompile 'junit:junit:4.12'
 }
