@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:background="@color/FondoGris"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/contededorArriba">
+
+        <ImageView
+            android:id="@+id/imageHamburgesaDetalle"
+            android:layout_width="match_parent"
+            android:layout_height="223dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:elevation="8dp"
+            app:srcCompat="@drawable/bigmac"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/contenedorMedio"
+        android:orientation="vertical"
+        android:layout_below="@id/contededorArriba">
+
+        <TextView
+            android:id="@+id/nombreDetalleProducto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Titular producto"
+            android:layout_margin="16dp"
+            android:layout_gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/TextoCafeAlterno"
+            android:textSize="34sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/precioDetalleProducto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="$79.00"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/Rojo"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cantidad"
+                android:textSize="20sp"
+                android:textColor="@color/TextoCafeAlterno"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="16dp"
+                android:id="@+id/cantidadProducto"
+                />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerCantidadDetalle"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_alignBottom="@id/cantidadProducto">
+            </Spinner>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/conTodo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Con Todo"
+                android:textSize="20sp"
+                android:textColor="@color/TextoCafeAlterno"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="24dp" />
+
+            <Switch
+                android:id="@+id/switchConTodo"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_alignBottom="@id/conTodo"
+                />
+
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/armaTuGusto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arma a tu gusto la hamburgesa 1"
+            android:textSize="20sp"
+            android:textColor="@color/TextoCafeAlterno"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="24dp"
+            />
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/contenedorMedio">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:background="@color/FondosNaranja"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:id="@+id/fondoAmarilloDetalle" />
+
+
+        <Button
+            android:id="@+id/BotonAñadirACarrito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_alignBottom="@id/fondoAmarilloDetalle"
+            android:layout_marginBottom="12dp"
+            android:background="@color/PrimariOscuro"
+            android:padding="8dp"
+            android:text="Añadir al carrito"
+            android:textColor="#FFFF"
+            />
+
+        <TextView
+            android:id="@+id/tamañoProducto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="32dp"
+            android:text="Tamaño"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/TextoCafeAlterno" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerTamañoDetalle"
+            android:layout_marginRight="40dp"
+            android:layout_alignBottom="@+id/tamañoProducto"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="24dp">
+        </Spinner>
+
+        <TextView
+            android:id="@+id/textoCebolla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tamañoProducto"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="16dp"
+            android:text="Cebolla"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/TextoCafeAlterno" />
+
+        <TextView
+            android:id="@+id/textoTomate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textoCebolla"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="16dp"
+            android:text="Tomate"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/TextoCafeAlterno" />
+
+
+
+        <TextView
+            android:id="@+id/textoLechuga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textoTomate"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="16dp"
+            android:text="Lechuga"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/TextoCafeAlterno" />
+
+        <TextView
+            android:id="@+id/textoQueso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textoLechuga"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="16dp"
+            android:text="Queso"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/TextoCafeAlterno" />
+
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/spinnerTamañoDetalle"
+            android:layout_alignBaseline="@id/textoCebolla"
+            android:layout_marginRight="40dp"
+            android:id="@+id/CebollaSwitch"
+            android:checked="true"
+            />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/CebollaSwitch"
+            android:layout_alignBaseline="@id/textoTomate"
+            android:layout_marginRight="40dp"
+            android:id="@+id/TomateSwitch"
+            android:checked="true"
+            />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignBaseline="@id/textoLechuga"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="40dp"
+            android:id="@+id/LechugaSwitch"
+            android:checked="true" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignBaseline="@id/textoQueso"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="40dp"
+            android:id="@+id/QuesoSwitch"
+            android:checked="true"
+            />
+
+
+
+
+
+    </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>
