@@ -62,7 +62,9 @@ public class BlankFragment2 extends Fragment {
          reciboCarrito.borroCarrito();
     }
 
-
+    public void borroCosto(GuardoCarrito reciboCarrito) {
+        reciboCarrito.borroPrecio();
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -98,10 +100,9 @@ public class BlankFragment2 extends Fragment {
             }
         });
 
-
-
+        cargoDatos();
         if (guardarDatos.isChecked()) {
-            pongodatos();
+            muestroDatosGuardados();
 
         }
         else {
@@ -192,6 +193,7 @@ public class BlankFragment2 extends Fragment {
                                 Intent intent = new Intent(BlankFragment2.this.getActivity(), Landing.class);
                                 guardarTarjetaDatos(numeroTarjeta,nombreTitular,vencimiento,guardarDatos.isChecked());
                                 borroCarrito(new GuardoCarrito());
+                                borroCosto(new GuardoCarrito());
                                 startActivity(intent);
                                 getActivity().finish();
                             }
@@ -218,13 +220,7 @@ public class BlankFragment2 extends Fragment {
 
 
 
-   /* @Override
-    public void onSaveInstanceState(Bundle outState) {
-        outState.putString("tarjeta", tarjeta);
-        outState.putString("nombre", nombreTitular.toString());
-        outState.putString("fecha", vencimiento.toString());
-        super.onSaveInstanceState(outState);
-    }*/
+
 
     private boolean verificaContenido() {
         boolean falta = false;
@@ -256,29 +252,36 @@ public class BlankFragment2 extends Fragment {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         SharedPreferences.Editor editor = preferences.edit();
         editor.clear();
-        Log.d("Prueba", "Eliminñe");
-        Log.d("Prueba", "tarjeta es. " + numeroTarjeta.getText().toString());
         editor.apply();
 
     }
 
 
-    private void pongodatos () {
+    private void cargoDatos () {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        Boolean checkboxGuardado = preferences.getBoolean("CheckBox", true);
+        guardarDatos.setChecked(checkboxGuardado);
+
+
+    }
+
+    public void muestroDatosGuardados() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         String tarjetaGuardada = preferences.getString("Tarjeta", " ");
         String nombreGuardado = preferences.getString("NombreUsuario", " ");
         String fechaGuardada = preferences.getString("FechaTarjeta", " ");
-        Boolean checkboxGuardado = preferences.getBoolean("CheckBox", true);
-        Log.d("prueba", "tarjetaPuesta: " +tarjetaGuardada);
+        Log.d("prueba", "tarjetaPuesta: " + tarjetaGuardada);
 
 
         numeroTarjeta.setText(tarjetaGuardada);
         nombreTitular.setText(nombreGuardado);
         vencimiento.setText(fechaGuardada);
-        guardarDatos.setChecked(checkboxGuardado);
-
-
     }
+
+
+
+
+
 
     public void onScanPress(View v) {
         Intent scanIntent = new Intent(getActivity(), CardIOActivity.class);

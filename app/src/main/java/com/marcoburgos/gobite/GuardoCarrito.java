@@ -21,8 +21,11 @@ static ArrayList<CarritoCompra_MC> datos = new ArrayList<CarritoCompra_MC>();
         datos.add(new CarritoCompra_MC(imagenCarrito, tituloCarrito, "Con Todo", "Grande", precioCarrito));
         CharSequence cadenaCorta = precioCarrito.toString().substring(1);
         Float precioacumulado = Float.parseFloat(cadenaCorta.toString());
+        Log.d("Prueba", "precio acumulado: " + precioacumulado);
         mandoPrecio = mandoPrecio+precioacumulado;
+        Log.d("Prueba", "mandoPrecio: " + mandoPrecio);
         precioTotalCarrito = mandoPrecio;
+        Log.d("Prueba", "precioTotalCarrito: "+ precioTotalCarrito);
 
     }
 
@@ -39,6 +42,7 @@ static ArrayList<CarritoCompra_MC> datos = new ArrayList<CarritoCompra_MC>();
         /*Log.d("ADebugPrecio", "Value: " + precioTotalCarrito);
         Float precioFloat = Float.parseFloat(precioTotalCarrito);
         Log.d("ADebugPrecio", "Value: " + precioFloat.toString());*/
+        Log.d("Prueba", "precio mandado es: "+ precioTotalCarrito);
         return precioTotalCarrito;
     }
 
@@ -49,6 +53,9 @@ static ArrayList<CarritoCompra_MC> datos = new ArrayList<CarritoCompra_MC>();
         return tamañoCarrito;
     }
 
-
+    public void  borroPrecio() {
+        precioTotalCarrito = Float.valueOf(0);
+        mandoPrecio = Float.valueOf(0);
+    }
 
 }
