@@ -2,6 +2,8 @@ package com.marcoburgos.gobite;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +20,10 @@ Button buttonPedidos;
         super.onCreate(savedInstanceState);
         setTitle("Inicio");
         setContentView(R.layout.activity_landing);
+
+
+
+
         buttonNuevaOrden = (Button)findViewById(R.id.buttonNuevaOrden);
         buttonPedidos = (Button)findViewById(R.id.buttonMisPedidos);
 
@@ -37,5 +43,12 @@ Button buttonPedidos;
             }
         });
 
+    }
+
+    private void deleteLoggedIn() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear();
+        editor.apply();
     }
 }

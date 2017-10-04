@@ -37,7 +37,7 @@ public class ConfigurarComplemento extends AppCompatActivity implements View.OnC
         actionBar.setHomeAsUpIndicator(R.mipmap.arrow_left);
         actionBar.setDisplayShowHomeEnabled(true);
         setTitle("Arma tu complemento");
-        setContentView(R.layout.scrolldown_pizza);
+        setContentView(R.layout.scrolldown_complemento);
 
 
         Button agregarCarrito = (Button)findViewById(R.id.BotonAñadirACarrito);
@@ -68,7 +68,7 @@ public class ConfigurarComplemento extends AppCompatActivity implements View.OnC
             tituloDetalle= (String) savedInstanceState.getSerializable("Titulo");
         }
         //Log.d("ADebugTagPasado", "Value: " + tituloDetalle);
-        titular = (TextView)findViewById(R.id.nombreDetalleHamburgesa);
+        titular = (TextView)findViewById(R.id.nombreDetalleProducto);
         if (tituloDetalle == null) {
             titular.setText(tituloDetalle);
         }
@@ -89,7 +89,7 @@ public class ConfigurarComplemento extends AppCompatActivity implements View.OnC
             precioDetalle= (String) savedInstanceState.getSerializable("Precio");
         }
 
-        precio = (TextView)findViewById(R.id.precioDetalleHamburgesa);
+        precio = (TextView)findViewById(R.id.precioDetalleProducto);
         if (precioDetalle == null) {
             precio.setText("Valio madre");
         }

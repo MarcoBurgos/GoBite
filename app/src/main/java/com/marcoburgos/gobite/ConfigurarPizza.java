@@ -42,7 +42,7 @@ public class ConfigurarPizza extends AppCompatActivity implements View.OnClickLi
 
         Button agregarCarrito = (Button)findViewById(R.id.BotonAñadirACarrito);
         agregarCarrito.setOnClickListener(this);
-        final Switch conTodo = (Switch)findViewById(R.id.switch1);
+        final Switch conTodo = (Switch)findViewById(R.id.switchConTodo);
         conTodo.setOnClickListener(this);
         final Switch cebolla = (Switch)findViewById(R.id.CebollaSwitch);
         cebolla.setOnClickListener(this);
@@ -148,7 +148,7 @@ public class ConfigurarPizza extends AppCompatActivity implements View.OnClickLi
             tituloDetalle= (String) savedInstanceState.getSerializable("Titulo");
         }
         //Log.d("ADebugTagPasado", "Value: " + tituloDetalle);
-        titular = (TextView)findViewById(R.id.nombreDetalleHamburgesa);
+        titular = (TextView)findViewById(R.id.nombreDetalleProducto);
         if (tituloDetalle == null) {
             titular.setText(tituloDetalle);
         }
@@ -169,7 +169,7 @@ public class ConfigurarPizza extends AppCompatActivity implements View.OnClickLi
             precioDetalle= (String) savedInstanceState.getSerializable("Precio");
         }
 
-        precio = (TextView)findViewById(R.id.precioDetalleHamburgesa);
+        precio = (TextView)findViewById(R.id.precioDetalleProducto);
         if (precioDetalle == null) {
             precio.setText("Valio madre");
         }

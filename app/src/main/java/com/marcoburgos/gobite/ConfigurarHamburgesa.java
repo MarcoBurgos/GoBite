@@ -21,7 +21,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 
-
 public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnClickListener {
     Spinner spinnerCantidad;
     Spinner spinnerTamaño;
@@ -31,10 +30,6 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
     TextView precio;
     ImageView imagen;
     Bitmap imagenparaMandar;
-
-
-
-
 
 
     @Override
@@ -50,28 +45,28 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.configurar_hamburgesa);
 
 
-        Button agregarCarrito = (Button)findViewById(R.id.BotonAñadirACarrito);
+        Button agregarCarrito = (Button) findViewById(R.id.BotonAñadirACarrito);
         agregarCarrito.setOnClickListener(this);
-        final Switch conTodo = (Switch)findViewById(R.id.switchConTodo);
+        final Switch conTodo = (Switch) findViewById(R.id.switchConTodo);
         conTodo.setOnClickListener(this);
-        final Switch cebolla = (Switch)findViewById(R.id.CebollaSwitch);
+        final Switch cebolla = (Switch) findViewById(R.id.CebollaSwitch);
         cebolla.setOnClickListener(this);
-        final Switch tomate = (Switch)findViewById(R.id.TomateSwitch);
+        final Switch tomate = (Switch) findViewById(R.id.TomateSwitch);
         tomate.setOnClickListener(this);
-        final Switch lechuga = (Switch)findViewById(R.id.LechugaSwitch);
+        final Switch lechuga = (Switch) findViewById(R.id.LechugaSwitch);
         lechuga.setOnClickListener(this);
-        final Switch queso = (Switch)findViewById(R.id.QuesoSwitch);
+        final Switch queso = (Switch) findViewById(R.id.QuesoSwitch);
         queso.setOnClickListener(this);
 
 
         cebolla.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
+                if (isChecked) {
                     if (tomate.isChecked() && lechuga.isChecked() && queso.isChecked()) {
                         conTodo.setChecked(true);
                     }
-                }else{
+                } else {
                     conTodo.setChecked(false);
                 }
             }
@@ -80,11 +75,11 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
         tomate.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
+                if (isChecked) {
                     if (cebolla.isChecked() && lechuga.isChecked() && queso.isChecked()) {
                         conTodo.setChecked(true);
                     }
-                }else{
+                } else {
                     conTodo.setChecked(false);
                 }
             }
@@ -93,11 +88,11 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
         lechuga.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
+                if (isChecked) {
                     if (tomate.isChecked() && cebolla.isChecked() && queso.isChecked()) {
                         conTodo.setChecked(true);
                     }
-                }else{
+                } else {
                     conTodo.setChecked(false);
                 }
             }
@@ -106,11 +101,11 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
         queso.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
+                if (isChecked) {
                     if (tomate.isChecked() && lechuga.isChecked() && cebolla.isChecked()) {
                         conTodo.setChecked(true);
                     }
-                }else{
+                } else {
                     conTodo.setChecked(false);
                 }
             }
@@ -119,12 +114,12 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
         conTodo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
+                if (isChecked) {
                     tomate.setChecked(true);
                     cebolla.setChecked(true);
                     lechuga.setChecked(true);
                     queso.setChecked(true);
-                    }
+                }
                 /*else {
                     tomate.setChecked(false);
                     cebolla.setChecked(false);
@@ -136,12 +131,12 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
 
 
         adaptador = new ArrayAdapter<CharSequence>(this, R.layout.spinner_estilo);
-        spinnerCantidad = (Spinner)findViewById(R.id.spinnerCantidadDetalle);
-        adaptador = ArrayAdapter.createFromResource(this,R.array.spinnerCarritoCantidad, android.R.layout.simple_spinner_item);
+        spinnerCantidad = (Spinner) findViewById(R.id.spinnerCantidadDetalle);
+        adaptador = ArrayAdapter.createFromResource(this, R.array.spinnerCarritoCantidad, android.R.layout.simple_spinner_item);
         adaptador.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinnerCantidad.setAdapter(adaptador);
-        spinnerTamaño = (Spinner)findViewById(R.id.spinnerTamañoDetalle);
-        adaptadorTamaño = ArrayAdapter.createFromResource(this,R.array.spinnerCarritoTamaño, android.R.layout.simple_spinner_item);
+        spinnerTamaño = (Spinner) findViewById(R.id.spinnerTamañoDetalle);
+        adaptadorTamaño = ArrayAdapter.createFromResource(this, R.array.spinnerCarritoTamaño, android.R.layout.simple_spinner_item);
         adaptadorTamaño.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinnerTamaño.setAdapter(adaptadorTamaño);
 
@@ -149,20 +144,19 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
         String tituloDetalle;
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
-            if(extras == null) {
-                tituloDetalle= null;
+            if (extras == null) {
+                tituloDetalle = null;
             } else {
-                tituloDetalle= extras.getString("Titulo");
+                tituloDetalle = extras.getString("Titulo");
             }
         } else {
-            tituloDetalle= (String) savedInstanceState.getSerializable("Titulo");
+            tituloDetalle = (String) savedInstanceState.getSerializable("Titulo");
         }
         //Log.d("ADebugTagPasado", "Value: " + tituloDetalle);
-        titular = (TextView)findViewById(R.id.nombreDetalleProducto);
+        titular = (TextView) findViewById(R.id.nombreDetalleProducto);
         if (tituloDetalle == null) {
             titular.setText(tituloDetalle);
-        }
-        else {
+        } else {
             titular.setText(tituloDetalle);
 
         }
@@ -170,25 +164,24 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
         String precioDetalle;
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
-            if(extras == null) {
-                precioDetalle= null;
+            if (extras == null) {
+                precioDetalle = null;
             } else {
-                precioDetalle= extras.getString("Precio");
+                precioDetalle = extras.getString("Precio");
             }
         } else {
-            precioDetalle= (String) savedInstanceState.getSerializable("Precio");
+            precioDetalle = (String) savedInstanceState.getSerializable("Precio");
         }
 
-        precio = (TextView)findViewById(R.id.precioDetalleProducto);
+        precio = (TextView) findViewById(R.id.precioDetalleProducto);
         if (precioDetalle == null) {
             precio.setText("Valio madre");
-        }
-        else {
+        } else {
             precio.setText(precioDetalle);
 
         }
 
-        imagen =(ImageView)findViewById(R.id.imageHamburgesaDetalle);
+        imagen = (ImageView) findViewById(R.id.imageHamburgesaDetalle);
         byte[] byteArray = getIntent().getByteArrayExtra("Imagen");
         Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
         imagenparaMandar = bmp;
@@ -215,7 +208,6 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
                 return super.onOptionsItemSelected(item);
         }
     }
-
 
 
     @Override
@@ -249,23 +241,23 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
                 break;
 
             //case R.id.switch1:
-                // do your code
+            // do your code
             //    break;
 
             //case R.id.CebollaSwitch:
-                //conTodo.setChecked(false);
+            //conTodo.setChecked(false);
             //    break;
 
             //case R.id.TomateSwitch:
-                //conTodo.setChecked(false);
+            //conTodo.setChecked(false);
             //    break;
 
             //case R.id.LechugaSwitch:
-                //conTodo.setChecked(false);
+            //conTodo.setChecked(false);
             //    break;
 
             //case R.id.QuesoSwitch:
-                //conTodo.setChecked(false);
+            //conTodo.setChecked(false);
             //    break;
 
             default:
@@ -279,10 +271,6 @@ public class ConfigurarHamburgesa extends AppCompatActivity implements View.OnCl
         Log.d("ADebugMando", "Value: " + precio.getText());*/
         clase.reciboCarrito(imagenparaMandar, titular.getText(), precio.getText());
     }
-
-
-
-
 
 
 }

@@ -21,8 +21,10 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import io.card.payment.CardIOActivity;
 import io.card.payment.CreditCard;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
@@ -31,7 +33,7 @@ import java.util.Arrays;
 public class BlankFragment2 extends Fragment {
 
 
-    private final int MY_SCAN_REQUEST_CODE =0;
+    private final int MY_SCAN_REQUEST_CODE = 0;
     Float precioCarrito;
     int tamañoCarrito;
     TextView articulosTotales, precioTotal;
@@ -54,12 +56,13 @@ public class BlankFragment2 extends Fragment {
     public void recuperoPrecioCarrito(GuardoCarrito clase) {
         precioCarrito = clase.mandoPrecio();
     }
+
     public void recuperoTamañoCarrito(GuardoCarrito clase) {
         tamañoCarrito = clase.mandoTamañoCarrito();
     }
 
     public void borroCarrito(GuardoCarrito reciboCarrito) {
-         reciboCarrito.borroCarrito();
+        reciboCarrito.borroCarrito();
     }
 
     public void borroCosto(GuardoCarrito reciboCarrito) {
@@ -81,17 +84,17 @@ public class BlankFragment2 extends Fragment {
         recuperoPrecioCarrito(new GuardoCarrito());
         recuperoTamañoCarrito(new GuardoCarrito());
 
-        articulosTotales = (TextView)rootView.findViewById(R.id.numItems);
+        articulosTotales = (TextView) rootView.findViewById(R.id.numItems);
         precioTotal = (TextView) rootView.findViewById(R.id.totalPagar);
-        articulosTotales.setText("Artículos: "+ tamañoCarrito);
-        precioTotal.setText("El total a pagar es de: $"+ precioCarrito + "0 pesos");
-        numeroTarjeta = (EditText)rootView.findViewById(R.id.nombreVendedorEntrega);
-        nombreTitular = (EditText)rootView.findViewById(R.id.detalleUbicacionEntrega);
+        articulosTotales.setText("Artículos: " + tamañoCarrito);
+        precioTotal.setText("El total a pagar es de: $" + precioCarrito + "0 pesos");
+        numeroTarjeta = (EditText) rootView.findViewById(R.id.nombreVendedorEntrega);
+        nombreTitular = (EditText) rootView.findViewById(R.id.detalleUbicacionEntrega);
         vencimiento = (EditText) rootView.findViewById(R.id.editTextFechaTarjeta);
-        validador = (EditText)rootView.findViewById(R.id.CVV);
+        validador = (EditText) rootView.findViewById(R.id.CVV);
         guardarDatos = (CheckBox) rootView.findViewById(R.id.guardarDatosPago);
         campos = Arrays.asList(numeroTarjeta, nombreTitular, vencimiento, validador);
-        btnEscaner =(Button) rootView.findViewById(R.id.botonEscanearTarjeta);
+        btnEscaner = (Button) rootView.findViewById(R.id.botonEscanearTarjeta);
 
         btnEscaner.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,8 +107,7 @@ public class BlankFragment2 extends Fragment {
         if (guardarDatos.isChecked()) {
             muestroDatosGuardados();
 
-        }
-        else {
+        } else {
             eliminoTarjetaDatos();
             numeroTarjeta.setText("");
             nombreTitular.setText("");
@@ -128,17 +130,17 @@ public class BlankFragment2 extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (count <= numeroTarjeta.getText().toString().length()
-                        &&(numeroTarjeta.getText().toString().length()==4
-                        ||numeroTarjeta.getText().toString().length()==9
-                        ||numeroTarjeta.getText().toString().length()==14)){
-                    numeroTarjeta.setText(numeroTarjeta.getText().toString()+" ");
+                        && (numeroTarjeta.getText().toString().length() == 4
+                        || numeroTarjeta.getText().toString().length() == 9
+                        || numeroTarjeta.getText().toString().length() == 14)) {
+                    numeroTarjeta.setText(numeroTarjeta.getText().toString() + " ");
                     int pos = numeroTarjeta.getText().length();
                     numeroTarjeta.setSelection(pos);
-                }else if (count >= numeroTarjeta.getText().toString().length()
-                        &&(numeroTarjeta.getText().toString().length()==4
-                        ||numeroTarjeta.getText().toString().length()==9
-                        ||numeroTarjeta.getText().toString().length()==14)){
-                    numeroTarjeta.setText(numeroTarjeta.getText().toString().substring(0,numeroTarjeta.getText().toString().length()-1));
+                } else if (count >= numeroTarjeta.getText().toString().length()
+                        && (numeroTarjeta.getText().toString().length() == 4
+                        || numeroTarjeta.getText().toString().length() == 9
+                        || numeroTarjeta.getText().toString().length() == 14)) {
+                    numeroTarjeta.setText(numeroTarjeta.getText().toString().substring(0, numeroTarjeta.getText().toString().length() - 1));
                     int pos = numeroTarjeta.getText().length();
                     numeroTarjeta.setSelection(pos);
                 }
@@ -150,7 +152,7 @@ public class BlankFragment2 extends Fragment {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (guardarDatos.isChecked()) {
                     if (verificaContenido()) {
-                        guardarTarjetaDatos(numeroTarjeta,nombreTitular,vencimiento,guardarDatos.isChecked());
+                        guardarTarjetaDatos(numeroTarjeta, nombreTitular, vencimiento, guardarDatos.isChecked());
                     } else {
                         Toast.makeText(getActivity(), "Faltan campos", Toast.LENGTH_SHORT).show();
                     }
@@ -165,7 +167,7 @@ public class BlankFragment2 extends Fragment {
         });
 
 
-        btn=(Button)rootView.findViewById(R.id.botonPagarCarrito);
+        btn = (Button) rootView.findViewById(R.id.botonPagarCarrito);
         btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -176,22 +178,20 @@ public class BlankFragment2 extends Fragment {
                 tarjeta = numeroTarjeta.getText().toString();
 
                 if (tarjeta != null) {
-                    tarjeta = tarjeta.substring(tarjeta.length()-4);
+                    tarjeta = tarjeta.substring(tarjeta.length() - 4);
                 }
 
 
-
-
                 AlertDialog.Builder alerta_constructor = new AlertDialog.Builder(BlankFragment2.this.getActivity());
-                alerta_constructor.setMessage("¿Deseas pagar $" +precioCarrito +"0 con la tarjeta terminación " + tarjeta + " ?")
+                alerta_constructor.setMessage("¿Deseas pagar $" + precioCarrito + "0 con la tarjeta terminación " + tarjeta + " ?")
                         .setCancelable(true)
                         .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 Toast.makeText(getActivity().getApplicationContext(),
-                                        "Pedido exitosamente enviado",Toast.LENGTH_SHORT).show();
+                                        "Pedido exitosamente enviado", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(BlankFragment2.this.getActivity(), Landing.class);
-                                guardarTarjetaDatos(numeroTarjeta,nombreTitular,vencimiento,guardarDatos.isChecked());
+                                guardarTarjetaDatos(numeroTarjeta, nombreTitular, vencimiento, guardarDatos.isChecked());
                                 borroCarrito(new GuardoCarrito());
                                 borroCosto(new GuardoCarrito());
                                 startActivity(intent);
@@ -214,12 +214,7 @@ public class BlankFragment2 extends Fragment {
         return rootView;
 
 
-
-
     }
-
-
-
 
 
     private boolean verificaContenido() {
@@ -239,8 +234,8 @@ public class BlankFragment2 extends Fragment {
     private void guardarTarjetaDatos(EditText tarjetaAGuardar, EditText usuarioAGuardar, EditText fechaAGuardar, boolean checkbox) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("Tarjeta",tarjetaAGuardar.getText().toString());
-        editor.putString("NombreUsuario",usuarioAGuardar.getText().toString());
+        editor.putString("Tarjeta", tarjetaAGuardar.getText().toString());
+        editor.putString("NombreUsuario", usuarioAGuardar.getText().toString());
         editor.putString("FechaTarjeta", fechaAGuardar.getText().toString());
         editor.putBoolean("CheckBox", checkbox);
         editor.apply();
@@ -257,7 +252,7 @@ public class BlankFragment2 extends Fragment {
     }
 
 
-    private void cargoDatos () {
+    private void cargoDatos() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         Boolean checkboxGuardado = preferences.getBoolean("CheckBox", true);
         guardarDatos.setChecked(checkboxGuardado);
@@ -277,10 +272,6 @@ public class BlankFragment2 extends Fragment {
         nombreTitular.setText(nombreGuardado);
         vencimiento.setText(fechaGuardada);
     }
-
-
-
-
 
 
     public void onScanPress(View v) {

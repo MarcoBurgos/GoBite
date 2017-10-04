@@ -1,204 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <RelativeLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:background="@color/FondoGris"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@id/imageHamburgesaDetalle"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="223dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:scaleType="centerCrop"
-            android:elevation="8dp"
-            />
-
-
-
-        <TextView
-            android:id="@+id/nombreDetalleHamburgesa"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/imageHamburgesaDetalle"
-            android:text="Debo cambiar"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="16dp"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/TextoCafeAlterno"
-            android:textSize="34sp"
-            android:layout_marginTop="4dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" />
+            android:orientation="vertical"
+            android:id="@+id/contededorArriba">
 
-        <TextView
-            android:id="@+id/precioDetalleHamburgesa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="$79.00"
-            android:layout_below="@id/nombreDetalleHamburgesa"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:textColor="@color/Rojo"
-            />
+            <ImageView
+                android:id="@+id/imageHamburgesaDetalle"
+                android:layout_width="match_parent"
+                android:layout_height="223dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="centerCrop"
+                android:elevation="8dp"
+                app:srcCompat="@drawable/bebidanaranja"
+                />
 
+        </LinearLayout>
 
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cantidad"
-            android:layout_below="@id/precioDetalleHamburgesa"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/TextoCafeAlterno"
-            android:layout_marginStart="32dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="16dp"
-            android:id="@+id/cantidadProducto"
-            />
-
-
-
-
-
-
-            />
-
-        <TextView
-            android:id="@+id/armaTuGusto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Eligue el tamaño del complemento 1"
-            android:layout_below="@id/cantidadProducto"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/TextoCafeAlterno"
-            android:layout_marginStart="32dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="24dp"
-            />
-
-
-        <View
-            android:layout_width="40dp"
-            android:layout_height="1dp"
-            android:layout_centerHorizontal="true"
-            android:background="@color/FondosNaranja"
-            android:layout_marginLeft="16dp"
-            android:layout_below="@id/BotonAñadirACarrito"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:id="@+id/extensorFondoAmarilloDetalle" />
-
-        <View
-            android:layout_width="40dp"
-            android:layout_height="1dp"
-            android:layout_centerHorizontal="true"
-            android:background="@color/FondoGris"
-            android:layout_marginLeft="16dp"
-            android:layout_below="@id/extensorFondoAmarilloDetalle"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:id="@+id/extensorFondoBlancoDetalle" />
-
-        <View
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:background="@color/FondosNaranja"
-            android:layout_marginLeft="16dp"
-            android:layout_below="@id/armaTuGusto"
-            android:layout_alignBottom="@id/extensorFondoAmarilloDetalle"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:id="@+id/fondoAmarilloDetalle" />
-
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginLeft="48dp"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/armaTuGusto"
-            android:text="Tamaño"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textColor="@color/TextoCafeAlterno"
-            android:id="@+id/tamañoProducto"
-            />
+            android:id="@+id/contenedorMedio"
+            android:orientation="vertical"
+            android:layout_below="@id/contededorArriba">
+
+            <TextView
+                android:id="@+id/nombreDetalleProducto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Titular producto"
+                android:layout_margin="16dp"
+                android:layout_gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/TextoCafeAlterno"
+                android:textSize="34sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/precioDetalleProducto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="$79.00"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textColor="@color/Rojo"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cantidad"
+                    android:textSize="20sp"
+                    android:textColor="@color/TextoCafeAlterno"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="16dp"
+                    android:id="@+id/cantidadProducto"
+                    />
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinnerCantidadDetalle"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginRight="32dp"
+                    android:layout_alignBottom="@id/cantidadProducto">
+                </Spinner>
+
+            </RelativeLayout>
 
 
 
 
 
+            <TextView
+                android:id="@+id/armaTuGusto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Elige el tamaño para el postre 1"
+                android:textSize="20sp"
+                android:textColor="@color/TextoCafeAlterno"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="24dp"
+                />
 
 
 
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@id/contenedorMedio">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:background="@color/FondosNaranja"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
+                android:id="@+id/fondoAmarilloDetalle" />
+
+
+            <Button
+                android:id="@+id/BotonAñadirACarrito"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_alignBottom="@id/fondoAmarilloDetalle"
+                android:layout_marginBottom="12dp"
+                android:background="@color/PrimariOscuro"
+                android:padding="8dp"
+                android:text="Añadir al carrito"
+                android:textColor="#FFFF"
+                />
+
+            <TextView
+                android:id="@+id/tamañoProducto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="32dp"
+                android:text="Tamaño"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/TextoCafeAlterno" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerTamañoDetalle"
+                android:layout_marginRight="40dp"
+                android:layout_alignBottom="@+id/tamañoProducto"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="24dp">
+            </Spinner>
 
 
 
-        <Button
-            android:id="@id/BotonAñadirACarrito"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tamañoProducto"
-            android:layout_centerHorizontal="true"
-            android:layout_marginEnd="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/PrimariOscuro"
-            android:padding="8dp"
-            android:text="Añadir al carrito"
-            android:textColor="#FFFF"
-            />
-
-
-
-
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinnerCantidadDetalle"
-            android:layout_marginRight="40dp"
-            android:layout_below="@id/precioDetalleHamburgesa"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="16dp"
-            >
-
-        </Spinner>
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinnerTamañoDetalle"
-            android:layout_marginRight="40dp"
-            android:layout_alignBottom="@+id/tamañoProducto"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="24dp">
-
-        </Spinner>
+        </RelativeLayout>
     </RelativeLayout>
 </ScrollView>

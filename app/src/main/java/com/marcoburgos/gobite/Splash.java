@@ -13,7 +13,6 @@ import java.util.TimerTask;
 public class Splash extends AppCompatActivity {
 
     private static final long DURACION_SPLASH = 1000;
-    String usuario, password;
 
 
 
@@ -25,12 +24,10 @@ public class Splash extends AppCompatActivity {
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        usuario = preferences.getString("Usuario", "");
-        password = preferences.getString("Contraseña", "");
-        Log.d("ADebugTag", "UsuarioSalvado: " + usuario);
-        Log.d("ADebugTag", "ContraSalvada: " + usuario);
-        if (usuario.isEmpty() && password.isEmpty() ) {
+
+
+
+
             TimerTask task = new TimerTask() {
                 @Override
                 public void run() {
@@ -42,18 +39,7 @@ public class Splash extends AppCompatActivity {
 
             Timer timer = new Timer();
             timer.schedule(task,DURACION_SPLASH);
-        }
-        TimerTask task = new TimerTask() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(Splash.this, Landing.class);
-                startActivity(intent);
-                finish();
-            }
-        };
 
-        Timer timer = new Timer();
-        timer.schedule(task,DURACION_SPLASH);
 
     }
 

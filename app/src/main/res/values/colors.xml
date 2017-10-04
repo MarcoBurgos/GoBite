@@ -12,8 +12,12 @@
     <color name="Subtítulos">#E99D1E</color>
     <color name="FondosNaranja">#FFCF48</color>
     <color name="FondoGris">#F5F9FB</color>
-        <color name="light_font">#FBFBFB</color>
-        <color name="grey_font">#ff9e9e9e</color>
-        <color name="text_shadow">#7F000000</color>
-        <color name="text_shadow_white">#FFFFFF</color>
+    <color name="white">#FFFF</color>
+    <color name="light_font">#FBFBFB</color>
+    <color name="grey_font">#ff9e9e9e</color>
+    <color name="text_shadow">#7F000000</color>
+
+    <item name="visible" type="id"/>
+    <item name="masked" type="id"/>
+
 </resources>

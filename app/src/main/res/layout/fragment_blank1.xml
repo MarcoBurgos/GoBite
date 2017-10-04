@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
-            android:text="Información de pago"
+            android:text="Dónde recoger mi orden"
             android:textAllCaps="true"
             android:textColor="@color/TextosCafés"
             android:textSize="24dp"

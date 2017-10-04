@@ -1,149 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:src="@drawable/logo"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/logoRegistrar"/>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/logoRegistrar"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_margin="16dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/logo" />
 
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/tituloRegistrar"
-    android:text="Regístrate"
-    android:layout_below="@id/logoRegistrar"
-    android:textSize="28dp"
-    android:textAllCaps="true"
-    android:layout_centerHorizontal="true"
-    android:textStyle="bold"
-    android:textColor="@color/colorPrimaryDark"
-    app:layout_constraintTop_toTopOf="parent"
-    android:layout_marginTop="16dp"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
-    android:layout_marginBottom="8dp"
-    />
-
-    <EditText
-        android:id="@+id/nombreRegistro"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:paddingLeft="8dp"
-        android:textColorHint="@color/TextosNaranja"
-        android:hint="Tu nombre"
-        android:layout_below="@id/tituloRegistrar"
-        android:layout_centerHorizontal="true"
-        android:inputType="textCapWords"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        />
-
-    <EditText
-        android:id="@+id/editTextMailRegistro"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_below="@id/nombreRegistro"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:paddingLeft="8dp"
-        android:textColorHint="@color/TextosNaranja"
-        android:hint="Correo electrónico"
-        android:inputType="textEmailAddress"
-         />
-
-    <EditText
-        android:id="@+id/editTextPasswordRegistro"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:paddingLeft="8dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/editTextMailRegistro"
-        android:textColorHint="@color/TextosNaranja"
-        android:hint="Contraseña"
-        android:focusableInTouchMode="true"
-        android:inputType="textPassword"
-
-        />
+        <TextView
+            android:id="@+id/tituloRegistrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logoRegistrar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="16dp"
+            android:text="Regístrate"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="28dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-    <EditText
-        android:id="@+id/editTextPasswordConfirmarRegistro"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:paddingLeft="8dp"
-        android:textColorHint="@color/TextosNaranja"
-        android:hint="Repite tu contraseña"
-        android:layout_below="@id/editTextPasswordRegistro"
-        android:layout_centerHorizontal="true"
-        android:focusableInTouchMode="true"
-        android:inputType="textPassword"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-         />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/editTextUsuarioRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:textColorHint="@color/TextosCafés"
+            android:layout_below="@id/tituloRegistrar"
+            >
 
-    <Button
-        android:id="@+id/buttonRegistrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Registrar"
-        android:layout_marginTop="16dp"
-        android:layout_below="@id/editTextPasswordConfirmarRegistro"
-        android:background="@color/resaltar"
-        android:textColor="#FFFF"
-        android:layout_centerHorizontal="true"
-         />
+            <AutoCompleteTextView
+                android:id="@+id/ACTVUSuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:hint="Tu nombre"
+                android:textColor="@color/TextosNaranja"
+                android:textColorHint="@color/TextosNaranja"
+                android:inputType="textNoSuggestions"
+                android:imeOptions="actionNext"
+                android:maxLines="12"
+                android:textIsSelectable="false"
+                />
 
-    <TextView
-        android:id="@+id/textViewLoginRegistro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="16dp"
-        android:text="Regresar al Login"
-        android:layout_below="@id/buttonRegistrar"
-        android:textSize="24dp"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/TextoCafeAlterno"
-         />
+        </android.support.design.widget.TextInputLayout>
 
-    <View
-        android:layout_width="40dp"
-        android:layout_height="16dp"
-        android:background="@color/FondoGris"
-        android:layout_below="@id/textViewLoginRegistro"
-        android:id="@+id/extensorFondoBlancoDetalle"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
-        />
-</RelativeLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/editTextEmailRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:textColorHint="@color/TextosCafés"
+            android:layout_below="@id/editTextUsuarioRegistro"
+            >
+
+            <AutoCompleteTextView
+                android:id="@+id/ACTVEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:hint="Email"
+                android:textColor="@color/TextosNaranja"
+                android:textColorHint="@color/TextosNaranja"
+                android:inputType="textEmailAddress"
+                android:imeOptions="actionUnspecified"
+                android:maxLines="1"
+                android:textIsSelectable="false"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/editTextPasswordRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:textColorHint="@color/TextosCafés"
+            android:layout_below="@id/editTextEmailRegistro"
+            >
+
+            <EditText
+                android:id="@+id/ACTVPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:hint="Password"
+                android:textColor="@color/TextosNaranja"
+                android:textColorHint="@color/TextosNaranja"
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textIsSelectable="false"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/editTextPasswordConfirmado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:textColorHint="@color/TextosCafés"
+            android:layout_below="@id/editTextPasswordRegister"
+            >
+
+            <EditText
+                android:id="@+id/ACTVConfirmPassowrd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:hint="Confirma password"
+                android:textColor="@color/TextosNaranja"
+                android:textColorHint="@color/TextosNaranja"
+                android:imeActionId="@+id/register_form_finished"
+                android:imeActionLabel="@string/action_sign_up"
+                android:imeOptions="actionUnspecified"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textIsSelectable="false"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/buttonRegistrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextPasswordConfirmado"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="16dp"
+            android:onClick="signUp"
+            android:background="@color/resaltar"
+            android:text="Registrar"
+            android:textColor="#FFFF" />
+
+        <TextView
+            android:id="@+id/textViewLoginRegistro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonRegistrar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Regresar al Login"
+            android:textColor="@color/TextoCafeAlterno"
+            android:textSize="24dp" />
+
+
+    </RelativeLayout>
 </ScrollView>

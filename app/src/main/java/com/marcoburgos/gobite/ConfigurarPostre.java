@@ -66,7 +66,7 @@ public class ConfigurarPostre extends AppCompatActivity implements View.OnClickL
             tituloDetalle= (String) savedInstanceState.getSerializable("Titulo");
         }
         //Log.d("ADebugTagPasado", "Value: " + tituloDetalle);
-        titular = (TextView)findViewById(R.id.nombreDetalleHamburgesa);
+        titular = (TextView)findViewById(R.id.nombreDetalleProducto);
         if (tituloDetalle == null) {
             titular.setText(tituloDetalle);
         }
@@ -87,7 +87,7 @@ public class ConfigurarPostre extends AppCompatActivity implements View.OnClickL
             precioDetalle= (String) savedInstanceState.getSerializable("Precio");
         }
 
-        precio = (TextView)findViewById(R.id.precioDetalleHamburgesa);
+        precio = (TextView)findViewById(R.id.precioDetalleProducto);
         if (precioDetalle == null) {
             precio.setText("Valio madre");
         }

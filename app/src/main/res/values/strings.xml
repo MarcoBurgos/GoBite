@@ -9,6 +9,13 @@
     <string name="intentos">Credenciales erróneas. Te quedan </string>
     <string name="mail">"Correo electrónico"</string>
     <string name="title_activity_restaurantes">RestaurantesActivity</string>
+    <string name="error_invalid_password">Password inválido</string>
+    <string name="error_field_required">Campos requeridos</string>
+    <string name="error_invalid_email">Dirección de email inválida</string>
+    <string name="action_sign_up">Sign_up</string>
+    <string name="prompt_email">Email registrado</string>
+    <string name="prompt_password">Ingresa tu contraseña</string>
+    <string name="action_sign_in_short">Ingresando...</string>
 
     <string-array name="spinnerCarritoTamaño">
         <item>Chica</item>
